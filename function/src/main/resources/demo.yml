@@ -5,7 +5,7 @@ metadata:
   name: hellowoword.php
   remark: aaaaa
 
-# kind: api-restful
+# type: api-restful
 spec(api-restful):
   method: GET
   uri: www.abc.com/mn

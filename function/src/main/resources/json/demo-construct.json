@@ -1,0 +1,49 @@
+{
+  "id": "hnp-docking-api-php-hellowword",
+  "version": "1.0",
+  "type": "api-restful",
+  "metadata": {
+    "remark": "组合处理",
+    "name": "hellowoword.php"
+  },
+  "spec(api-restful)": {
+    "method": "GET",
+    "uri": "www.abc.com/mn",
+    "dataType": "json/xml"
+  },
+  "spec(api-wsdl)": {
+    "uri": "aaa.bbb.ccc/ddd.php"
+  },
+  "spec(jsonpath-convert)": {
+    "rule": {}
+  },
+  "spec(java-function)": {
+    "invoke": {
+      "className": "全路径",
+      "functionName": "方法名",
+      "beanName": "beanId(@Service()中value的值),required=false"
+    }
+  },
+  "spec(tracking)": {
+    "remark": "",
+    "invoke": {
+      "specId": "java-function-hnp-docking-xxx-response",
+      "children": [
+        {},
+        {},
+        {
+          "invoke": {
+            "specId": "hnp-docking-api-php-hellowword1",
+            "children": []
+          }
+        },
+        {
+          "invoke": {
+            "specId": "hnp-docking-api-php-hellowword2",
+            "children": []
+          }
+        }
+      ]
+    }
+  }
+}

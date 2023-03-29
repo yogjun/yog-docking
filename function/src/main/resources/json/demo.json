@@ -1,0 +1,45 @@
+{
+  "id": "hnp-docking-api-php-hellowword",
+  "version": "1.0",
+  "type": "api-restful",
+  "metadata": {
+    "remark": "不提供配置组合功能，具体函数api的组合也表现为一个java函数",
+    "name": "hellowoword.php"
+  },
+  "spec(api-restful)": {
+    "method": "GET",
+    "uri": "www.abc.com/mn",
+    "dataType": "json/xml",
+    "request": {
+      "handler": "api-restful-hnp-docking-xxx-request"
+    },
+    "response": {
+      "handler": "api-restful-hnp-docking-xxx-response"
+    }
+  },
+  "spec(api-wsdl)": {
+    "uri": "aaa.bbb.ccc/ddd.php",
+    "request": {
+      "handler": "api-wsdl-hnp-docking-xxx-request"
+    },
+    "response": {
+      "handler": "api-wsdl-hnp-docking-xxx-response"
+    }
+  },
+  "spec(jsonpath-convert)": {
+    "rule": {}
+  },
+  "spec(java-function)": {
+    "invoke": {
+      "className": "全路径",
+      "functionName": "方法名",
+      "beanName": "beanId(@Service()中value的值),required=false"
+    },
+    "request": {
+      "handler": "java-function-hnp-docking-xxx-request"
+    },
+    "response": {
+      "handler": "java-function-hnp-docking-xxx-response"
+    }
+  }
+}
