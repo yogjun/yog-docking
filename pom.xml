@@ -18,6 +18,7 @@
         <module>api-handler</module>
         <module>kits</module>
         <module>bean-handler</module>
+        <module>function</module>
     </modules>
 
     <dependencyManagement>

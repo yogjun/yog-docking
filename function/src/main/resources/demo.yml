@@ -1,0 +1,60 @@
+id: hnp-docking-api-php-hellowword
+version: a.b.c
+type: api
+metadata:
+  name: hellowoword.php
+  remark: aaaaa
+
+# kind: api-restful
+spec(api-restful):
+  method: GET
+  uri: www.abc.com/mn
+  dataType: json/xml
+  request:
+    handler: api-restful-hnp-docking-xxx-request
+  respose:
+    handler: api-restful-hnp-docking-xxx-response
+
+# type: api-wsdl
+spec(api-wsdl):
+  uri: aaa.bbb.ccc/ddd.php
+  request:
+    handler: api-wsdl-hnp-docking-xxx-request
+  respose:
+    handler: api-wsdl-hnp-docking-xxx-response
+
+
+# type: java-function
+spec(java-function):
+  invoke:
+    className: 全路径
+    functionName: 方法名
+    beanName: beanId(@Service()中value的值)
+  request:
+    handler: java-function-hnp-docking-xxx-request
+  #    handlers:
+  #      - java-function-hnp-docking-xxx-request1
+  #      - java-function-hnp-docking-xxx-request2
+  respose:
+    handler: java-function-hnp-docking-xxx-response
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 编排方式
+
+# type: json-path-convert
+# type: sourcecode-java
