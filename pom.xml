@@ -15,12 +15,12 @@
     </properties>
 
     <modules>
-        <module>handler-api</module>
+        <module>handler-invoke</module>
         <module>kits</module>
         <module>handler-bean</module>
         <module>function-manager</module>
         <module>function-executor</module>
-        <module>docking-bean</module>
+        <module>common-bean</module>
         <module>test</module>
     </modules>
 
