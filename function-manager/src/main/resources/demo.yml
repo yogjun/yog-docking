@@ -5,13 +5,26 @@ metadata:
   name: hellowoword.php
   remark: aaaaa
 
+spec(age): ssssssss-18
+  type: v
+  value: 18
+
+spec(2):
+  type: enum
+  value: com.enums.aaa.class
+
+
 # type: api-restful
 spec(api-restful):
   method: GET
   uri: www.abc.com/mn
   dataType: json/xml
   request:
-    handler: api-restful-hnp-docking-xxx-request
+    age:  ssssssss-18
+    name: api-docking-api-php-hellowword
+    spec(age): ssssssss-18
+      type: v
+      value: 18
   respose:
     handler: api-restful-hnp-docking-xxx-response
 
