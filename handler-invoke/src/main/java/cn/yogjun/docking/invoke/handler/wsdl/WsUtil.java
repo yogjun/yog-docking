@@ -6,8 +6,6 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
 
-import java.util.ResourceBundle;
-
 /**
  * {@link WsUtil}
  *
@@ -19,25 +17,6 @@ public class WsUtil {
 
   public static final int CXF_CLIENT_CONNECT_TIMEOUT = 30 * 1000;
   public static final int CXF_CLIENT_RECEIVE_TIMEOUT = 30 * 1000;
-  /**
-   * @param clazz
-   * @param paraName
-   * @param timeout
-   * @return
-   */
-  public <T> T getWebService(Class<T> clazz, String paraName, Integer... timeout) {
-
-    ResourceBundle dBResources = ResourceBundle.getBundle("application-config");
-    String url = dBResources.getString(paraName);
-
-    if (timeout == null || timeout.length == 0) {
-      return getWebServiceByUrl(clazz, url);
-    } else if (timeout.length == 1) {
-      return getWebServiceByUrl(clazz, url, timeout[0], timeout[0]);
-    } else {
-      return getWebServiceByUrl(clazz, url, timeout[0], timeout[1]);
-    }
-  }
 
   public <T> T getWebServiceByUrl(Class<T> clazz, String url) {
     return getWebServiceByUrl(clazz, url, CXF_CLIENT_CONNECT_TIMEOUT, CXF_CLIENT_RECEIVE_TIMEOUT);
