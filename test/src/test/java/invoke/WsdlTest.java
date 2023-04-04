@@ -6,7 +6,6 @@ import com.docking.wsdl.xlt.CreateOrderResponse;
 import com.docking.wsdl.xlt.DeclareItem;
 import com.docking.wsdl.xlt.OrderOnlineService;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * {@link WsdlTest}
@@ -16,15 +15,15 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class WsdlTest {
 
-  @Autowired private WsUtil wsUtil;
+  private static final String URL = "http://47.92.33.48:8086/xms/services/order";
+//  private static final String URL = "http://www.360chain.com:8086/xms/services/order";
 
   @Test
   public void testWsdl() {
 
     String jsonInfo = null;
     try {
-      OrderOnlineService service =
-          wsUtil.getWebServiceByUrl(OrderOnlineService.class, "createOrder");
+      OrderOnlineService service = new WsUtil().getWebServiceByUrl(OrderOnlineService.class, URL);
 
       CreateOrderRequest req = new CreateOrderRequest();
       req.setTrackingNo("HP000000001SG"); // 服务商跟踪号码
