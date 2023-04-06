@@ -42,7 +42,7 @@ spec(java-function):
   invoke:
     className: 全路径
     functionName: 方法名
-    beanName: beanId(@Service()中value的值)
+    beanId: beanId(@Service()中value的值)
   request:
     handler: java-function-hnp-docking-xxx-request
   #    handlers:

@@ -7,13 +7,13 @@ import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
 
 /**
- * {@link WsUtil}
+ * {@link WebServiceUtil}
  *
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/3/31
  */
-public class WsUtil {
-  public WsUtil() {}
+public class WebServiceUtil {
+  public WebServiceUtil() {}
 
   public static final int CXF_CLIENT_CONNECT_TIMEOUT = 30 * 1000;
   public static final int CXF_CLIENT_RECEIVE_TIMEOUT = 30 * 1000;

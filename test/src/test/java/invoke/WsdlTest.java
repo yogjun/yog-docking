@@ -1,6 +1,6 @@
 package invoke;
 
-import cn.yogjun.docking.invoke.handler.wsdl.WsUtil;
+import cn.yogjun.docking.invoke.handler.wsdl.WebServiceUtil;
 import com.docking.wsdl.xlt.CreateOrderRequest;
 import com.docking.wsdl.xlt.CreateOrderResponse;
 import com.docking.wsdl.xlt.DeclareItem;
@@ -23,7 +23,7 @@ public class WsdlTest {
 
     String jsonInfo = null;
     try {
-      OrderOnlineService service = new WsUtil().getWebServiceByUrl(OrderOnlineService.class, URL);
+      OrderOnlineService service = new WebServiceUtil().getWebServiceByUrl(OrderOnlineService.class, URL);
 
       CreateOrderRequest req = new CreateOrderRequest();
       req.setTrackingNo("HP000000001SG"); // 服务商跟踪号码
