@@ -12,7 +12,7 @@ import cn.yogjun.docking.invoke.handler.feign.client.IFeignClient;
 public class SpringFeignClientUtil {
 
   public static Object invokeFeignClient(
-      String httpMethod, String feignName, String url, Object[] params) throws Exception {
+      String httpMethod, String feignName, String url, Object... params) throws Exception {
     IFeignClient iFeignClient = SpringUtil.getBean(IFeignClient.class);
     switch (httpMethod) {
       case "GET":

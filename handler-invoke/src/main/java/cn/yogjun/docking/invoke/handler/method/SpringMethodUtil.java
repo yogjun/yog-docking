@@ -18,7 +18,7 @@ public class SpringMethodUtil {
    * @return
    * @throws Exception
    */
-  public static Object springInvokeMethod(String serviceName, String methodName, Object[] params) {
+  public static Object springInvokeMethod(String serviceName, String methodName, Object... params) {
     Object service = SpringUtil.getBean(serviceName);
     // 找到方法
     Method method =

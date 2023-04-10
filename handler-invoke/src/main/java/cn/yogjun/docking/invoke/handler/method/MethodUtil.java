@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 public class MethodUtil {
   public MethodUtil() {}
 
-  public static Object invokeMethod(String className, String methodName, Object[] params) {
+  public static Object invokeMethod(String className, String methodName, Object... params) {
     Object t = null;
     try {
       Class clazz = Class.forName(className);
