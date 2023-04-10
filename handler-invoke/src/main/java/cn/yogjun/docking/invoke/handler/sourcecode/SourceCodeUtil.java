@@ -1,5 +1,7 @@
 package cn.yogjun.docking.invoke.handler.sourcecode;
 
+import java.util.Map;
+
 /**
  * {@link SourceCodeUtil}
  *
@@ -8,5 +10,5 @@ package cn.yogjun.docking.invoke.handler.sourcecode;
  */
 public interface SourceCodeUtil {
 
-  Object executeCode(String sourceCode, Object... params);
+  Object executeCode(String sourceCode, Map<String,Object> params);
 }
