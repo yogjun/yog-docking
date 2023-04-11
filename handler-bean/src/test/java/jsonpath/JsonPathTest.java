@@ -24,8 +24,13 @@ public class JsonPathTest {
   }
 
   @Test
-  public void testFromBean() {
+  public void testFromBeanList() {
     List<String> authors = JsonPath.read(json, "$.store.book[*].author");
     System.out.println(authors);
+  }
+  @Test
+  public void testFromBeanObj() {
+    Object expensive = JsonPath.read(json, "$.store.bicycle.price");
+    System.out.println(expensive);
   }
 }

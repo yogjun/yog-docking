@@ -12,13 +12,13 @@ import cn.yogjun.docking.invoke.handler.feign.client.IFeignClient;
 public class SpringFeignClientUtil {
 
   public static Object invokeFeignClient(
-      String httpMethod, String feignName, String url, Object... params) throws Exception {
+      String httpMethod, String feignName, String url, Object param) throws Exception {
     IFeignClient iFeignClient = SpringUtil.getBean(IFeignClient.class);
     switch (httpMethod) {
       case "GET":
-        return iFeignClient.executeGetApi(feignName, url, params);
+        return iFeignClient.executeGetApi(feignName, url, param);
       case "POST":
-        return iFeignClient.executePostApi(feignName, url, params);
+        return iFeignClient.executePostApi(feignName, url, param);
       default:
         throw new Exception("unsupport such method");
     }
