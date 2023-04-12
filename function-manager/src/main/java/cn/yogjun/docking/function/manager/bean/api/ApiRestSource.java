@@ -1,10 +1,7 @@
 package cn.yogjun.docking.function.manager.bean.api;
 
-import cn.yogjun.docking.function.manager.bean.info.SourceBean;
-import cn.yogjun.docking.function.manager.bean.info.SourceSpec;
+import cn.yogjun.docking.function.manager.bean.base.SourceSpec;
 import lombok.Data;
-
-import java.util.LinkedHashMap;
 
 /**
  * {@link ApiRestSource}
@@ -22,9 +19,4 @@ public class ApiRestSource extends SourceSpec {
 
   /** json/xml */
   private String dataType;
-
-  /** 请求参数 */
-  private LinkedHashMap<String, SourceBean> request;
-
-  private LinkedHashMap<String, SourceBean> response;
 }

@@ -1,6 +1,6 @@
 package cn.yogjun.docking.function.manager.bean.processor;
 
-import cn.yogjun.docking.function.manager.bean.info.SourceBean;
+import cn.yogjun.docking.function.manager.bean.base.SourceBean;
 import lombok.Data;
 
 /**

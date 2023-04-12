@@ -1,4 +1,4 @@
-package cn.yogjun.docking.function.manager.bean.info;
+package cn.yogjun.docking.function.manager.bean.base;
 
 import lombok.Data;
 

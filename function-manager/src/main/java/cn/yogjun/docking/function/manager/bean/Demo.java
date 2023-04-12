@@ -1,7 +1,7 @@
 package cn.yogjun.docking.function.manager.bean;
 
 import cn.yogjun.docking.function.manager.bean.api.ApiRestSource;
-import cn.yogjun.docking.function.manager.bean.info.SourceBean;
+import cn.yogjun.docking.function.manager.bean.base.SourceBean;
 
 /**
  * {@link Demo}
