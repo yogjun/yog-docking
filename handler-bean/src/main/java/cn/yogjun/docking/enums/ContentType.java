@@ -1,11 +1,16 @@
 package cn.yogjun.docking.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * {@link ContentType}
  *
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/3/27
  */
+@Getter
+@AllArgsConstructor
 public enum ContentType {
   /** json格式 */
   JSON("json", String.class),
@@ -17,17 +22,4 @@ public enum ContentType {
 
   private String desc;
   private Class clazz;
-
-  ContentType(String desc, Class clazz) {
-    this.desc = desc;
-    this.clazz = clazz;
-  }
-
-  public String getDesc() {
-    return desc;
-  }
-
-  public Class getClazz() {
-    return clazz;
-  }
 }

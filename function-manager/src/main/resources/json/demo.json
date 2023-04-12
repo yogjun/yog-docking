@@ -1,6 +1,6 @@
 {
   "id": "hnp-docking-api-php-hellowword",
-  "version": "1.0",
+  "version": 1,
   "type": "api-restful",
   "metadata": {
     "remark": "不提供配置组合功能，具体函数api的组合也表现为一个java函数",
@@ -23,7 +23,7 @@
   "spec(api-wsdl)": {
     "uri": "aaa.bbb.ccc/ddd.php",
     "request": {
-      "handler": "api-wsdl-hnp-docking-xxx-request"
+      "id": "api-wsdl-hnp-docking-xxx-request"
     },
     "response": {
       "handler": "api-wsdl-hnp-docking-xxx-response"

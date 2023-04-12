@@ -36,7 +36,6 @@ spec(api-wsdl):
   respose:
     handler: api-wsdl-hnp-docking-xxx-response
 
-
 # type: java-function
 spec(java-function):
   invoke:
@@ -51,7 +50,7 @@ spec(java-function):
   respose:
     handler: java-function-hnp-docking-xxx-response
 
-
+spec():
 
 
 
