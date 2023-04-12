@@ -10,4 +10,8 @@ import lombok.Data;
  * @version ${project.version} - 2023/4/12
  */
 @Data
-public class ApiWsdlSource extends SourceSpec {}
+public class ApiWsdlSource extends SourceSpec {
+  private String url;
+  private String serviceClass;
+  private String methodName;
+}

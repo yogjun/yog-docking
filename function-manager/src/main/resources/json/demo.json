@@ -11,6 +11,14 @@
     "type": "api-restful",
     "version": 1
   },
+  "spec(processor-composition)":[
+    {
+      "id": "hnp-docking-api-php-hellowwordchild",
+      "type": "api-restful",
+      "version": 1
+    }
+  ],
+
   "spec(api-restful)": {
     "method": "GET",
     "uri": "www.abc.com/mn",

@@ -16,14 +16,15 @@ import org.junit.Test;
 public class WsdlTest {
 
   private static final String URL = "http://47.92.33.48:8086/xms/services/order";
-//  private static final String URL = "http://www.360chain.com:8086/xms/services/order";
+  //  private static final String URL = "http://www.360chain.com:8086/xms/services/order";
 
   @Test
   public void testWsdl() {
 
     String jsonInfo = null;
     try {
-      OrderOnlineService service = new WebServiceUtil().getWebServiceByUrl(OrderOnlineService.class, URL);
+      OrderOnlineService service =
+          new WebServiceUtil().getWebServiceByUrl(OrderOnlineService.class, URL);
 
       CreateOrderRequest req = new CreateOrderRequest();
       req.setTrackingNo("HP000000001SG"); // 服务商跟踪号码

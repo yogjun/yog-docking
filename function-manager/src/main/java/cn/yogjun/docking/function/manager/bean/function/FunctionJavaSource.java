@@ -10,4 +10,8 @@ import lombok.Data;
  * @version ${project.version} - 2023/4/12
  */
 @Data
-public class FunctionJavaSource extends SourceSpec {}
+public class FunctionJavaSource extends SourceSpec {
+
+  private String className;
+  private String methodName;
+}
