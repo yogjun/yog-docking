@@ -6,20 +6,53 @@
     "remark": "不提供配置组合功能，具体函数api的组合也表现为一个java函数",
     "name": "hellowoword.php"
   },
-
+  "spec(processor-reference)": {
+    "id": "hnp-docking-api-php-hellowwordchild",
+    "type": "api-restful",
+    "version": 1
+  },
   "spec(api-restful)": {
     "method": "GET",
     "uri": "www.abc.com/mn",
     "dataType": "json/xml",
     "request": {
-      "param": true,
-      "handler": "api-restful-hnp-docking-xxx-request",
+      "handler": "api-restful-hnp-docking-xxx-request"
     },
     "response": {
       "handler": "api-restful-hnp-docking-xxx-response"
     }
   },
-
+  "spec(api-restful2)": {
+    "method": "GET",
+    "uri": "www.abc.com/mn",
+    "dataType": "json/xml",
+    "request": {
+      "name": {
+        "id": "",
+        "type": "reference",
+        "spec": {
+          "id": "",
+          "type": "property",
+          "subType": "string",
+          "value": "matthew"
+        }
+      },
+      "age": {
+        "type": "reference",
+        "spec": {
+          "id": "api-restful-hnp-docking-xxx-request"
+        }
+      },
+      "sex": {
+      },
+      "reference": {
+        "id": "api-restful-hnp-docking-xxx-request"
+      }
+    },
+    "response": {
+      "handler": "api-restful-hnp-docking-xxx-response"
+    }
+  },
   "spec(api-wsdl)": {
     "uri": "aaa.bbb.ccc/ddd.php",
     "request": {
@@ -29,11 +62,9 @@
       "handler": "api-wsdl-hnp-docking-xxx-response"
     }
   },
-
   "spec(jsonpath-convert)": {
     "rule": {}
   },
-
   "spec(java-function)": {
     "invoke": {
       "className": "全路径",

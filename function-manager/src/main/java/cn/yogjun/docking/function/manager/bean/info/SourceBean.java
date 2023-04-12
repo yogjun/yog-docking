@@ -1,4 +1,4 @@
-package cn.yogjun.docking.function.manager.bean;
+package cn.yogjun.docking.function.manager.bean.info;
 
 import lombok.Data;
 
@@ -9,14 +9,16 @@ import lombok.Data;
  * @version ${project.version} - 2023/4/11
  */
 @Data
-public class SourceBean {
+public class SourceBean<T extends SourceSpec> extends SourceSpec {
 
-  /** id example: "api-rest-ccc-d" */
+  /** id type-group-name,example: "api-rest-ccc-d" */
   private String id;
+
   private int version;
+
+  /** api-rest */
   private String type;
-  private String subType;
-  private String group;
-  private String name;
+
   private SourceMetaBean metadata;
+  private T spec;
 }
