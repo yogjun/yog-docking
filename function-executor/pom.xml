@@ -21,6 +21,10 @@
             <groupId>cn.yogjun</groupId>
             <artifactId>function-manager</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.yogjun</groupId>
+            <artifactId>common-bean</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
