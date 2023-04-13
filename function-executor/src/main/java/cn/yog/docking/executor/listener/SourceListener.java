@@ -1,7 +1,7 @@
 package cn.yog.docking.executor.listener;
 
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.function.manager.bean.base.Source;
+import cn.yogjun.docking.function.manager.bean.base.Sourcebean;
 
 /**
  * {@link SourceListener}
@@ -10,13 +10,13 @@ import cn.yogjun.docking.function.manager.bean.base.Source;
  * @version ${project.version} - 2023/4/13
  */
 public interface SourceListener {
-  boolean beforeEvaluate(Source source, Params param);
+  boolean beforeEvaluate(Sourcebean source, Params param);
 
-  void afterEvaluate(Source source, Params param, boolean var3);
+  void afterEvaluate(Sourcebean source, Params param, boolean var3);
 
-  void beforeExecute(Source source, Params param);
+  void beforeExecute(Sourcebean source, Params param);
 
-  void onSuccess(Source source, Params param);
+  void onSuccess(Sourcebean source, Params param);
 
-  void onFailure(Source source, Params param, Exception e);
+  void onFailure(Sourcebean source, Params param, Exception e);
 }

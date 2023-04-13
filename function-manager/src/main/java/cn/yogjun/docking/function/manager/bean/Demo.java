@@ -1,7 +1,7 @@
 package cn.yogjun.docking.function.manager.bean;
 
 import cn.yogjun.docking.function.manager.bean.api.ApiRestSource;
-import cn.yogjun.docking.function.manager.bean.base.Source;
+import cn.yogjun.docking.function.manager.bean.base.Sourcebean;
 
 /**
  * {@link Demo}
@@ -11,6 +11,6 @@ import cn.yogjun.docking.function.manager.bean.base.Source;
  */
 public class Demo {
   public static void main(String[] args) {
-    Source<ApiRestSource> rest = new Source<>();
+    Sourcebean<ApiRestSource> rest = new Sourcebean<>();
   }
 }

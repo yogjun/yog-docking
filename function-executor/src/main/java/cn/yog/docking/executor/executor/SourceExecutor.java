@@ -1,6 +1,6 @@
 package cn.yog.docking.executor.executor;
 
-import cn.yogjun.docking.function.manager.bean.base.Source;
+import cn.yogjun.docking.function.manager.bean.base.Sourcebean;
 
 /**
  * {@link SourceExecutor}
@@ -10,7 +10,7 @@ import cn.yogjun.docking.function.manager.bean.base.Source;
  */
 public interface SourceExecutor<T> {
 
-  void execute(Source source);
+  void execute(Sourcebean source);
 
   //  List<SourceExecutor> getNextExecutors();
 

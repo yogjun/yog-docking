@@ -1,6 +1,6 @@
 package cn.yogjun.docking.function.manager.support;
 
-import cn.yogjun.docking.function.manager.bean.base.Source;
+import cn.yogjun.docking.function.manager.bean.base.Sourcebean;
 
 import java.io.Reader;
 
@@ -12,5 +12,5 @@ import java.io.Reader;
  */
 public interface SourceReader {
   // todo reader impl
-  Source read(Reader reader) throws Exception;
+  Sourcebean read(Reader reader) throws Exception;
 }
