@@ -1,4 +1,4 @@
-package cn.yogjun.docking.function.manager.constants;
+package cn.yogjun.docking.bean.constants;
 
 /**
  * {@link SourceExecutorAlias}

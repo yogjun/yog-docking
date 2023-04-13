@@ -1,6 +1,6 @@
-package cn.yogjun.docking.function.manager.enums;
+package cn.yogjun.docking.bean.enums;
 
-import cn.yogjun.docking.function.manager.constants.SourceExecutorAlias;
+import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package cn.yog.docking.executor;
+package cn.yog.docking.executor.executor;
 
 import cn.hutool.extra.spring.SpringUtil;
 import cn.yogjun.docking.function.manager.enums.SourceType;
