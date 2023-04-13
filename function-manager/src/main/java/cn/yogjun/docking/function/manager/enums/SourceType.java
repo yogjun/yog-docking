@@ -21,8 +21,11 @@ public enum SourceType {
   JAVA_SPRING_FUNCTION("java函数", SourceExecutorAlias.JAVA_SPRING_FUNCTION),
   /** property */
   INTEGER("int字段处理", ""),
-/** processor,reference */
-;
+  STRING("string字段处理", ""),
+  ARRAY("数组字段处理", ""),
+  /** processor */
+  COMPOSITION("组合处理", ""),
+  ;
 
   private String desc;
   private String handlerName;
