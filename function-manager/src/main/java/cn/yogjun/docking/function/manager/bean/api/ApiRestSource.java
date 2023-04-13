@@ -19,4 +19,8 @@ public class ApiRestSource extends SourceSpec {
 
   /** json/xml */
   private String dataType;
+
+  public void run(){
+
+  }
 }
