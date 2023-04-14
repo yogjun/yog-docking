@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>function-executor</artifactId>
+    <artifactId>source-executor</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>cn.yogjun</groupId>
-            <artifactId>function-manager</artifactId>
+            <artifactId>source-manager</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.yogjun</groupId>

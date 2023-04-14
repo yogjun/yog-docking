@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>function-manager</artifactId>
+    <artifactId>source-manager</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
