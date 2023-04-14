@@ -1,0 +1,61 @@
+package cn.yog.docking.executor.param;
+
+import cn.hutool.core.lang.func.Func1;
+import cn.hutool.core.lang.func.LambdaUtil;
+import lombok.ToString;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Objects;
+
+/**
+ * {@link Params} 执行器使用参数
+ *
+ * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
+ * @version ${project.version} - 2023/4/13
+ */
+@ToString
+public class Params implements Iterable<Entry<String, Object>> {
+
+  private Map<String, Object> params = new HashMap();
+  // todo 使用params保存结果 or eventbus
+  //  private Object response;
+
+  public void put(String name, Object param) {
+    Objects.requireNonNull(name);
+    this.params.put(name, param);
+  }
+
+  public <T, R> void put(Func1<T, R> nameFunc, Object param) {
+    this.put(LambdaUtil.getFieldName(nameFunc), param);
+  }
+
+  public Object get(String name) {
+    Objects.requireNonNull(name);
+    return this.params.get(name);
+  }
+
+  public <T, R> Object get(Func1<T, R> nameFunc) {
+    return this.get(LambdaUtil.getFieldName(nameFunc));
+  }
+
+  public Object remove(String name) {
+    Objects.requireNonNull(name);
+    return this.params.remove(name);
+  }
+
+  public <T, R> Object remove(Func1<T, R> nameFunc) {
+    return this.remove(LambdaUtil.getFieldName(nameFunc));
+  }
+
+  public Map<String, Object> asMap() {
+    return this.params;
+  }
+
+  @Override
+  public Iterator<Entry<String, Object>> iterator() {
+    return this.params.entrySet().iterator();
+  }
+}

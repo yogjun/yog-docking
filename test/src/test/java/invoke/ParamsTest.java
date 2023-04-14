@@ -1,7 +1,7 @@
 package invoke;
 
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.function.manager.bean.api.ApiRestSource;
+import cn.yogjun.docking.source.manager.bean.api.ApiRestSource;
 import org.junit.Test;
 
 /**
