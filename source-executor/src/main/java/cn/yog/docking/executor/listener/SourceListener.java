@@ -1,7 +1,7 @@
 package cn.yog.docking.executor.listener;
 
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 
 /**
  * {@link SourceListener}
@@ -12,11 +12,11 @@ import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
 public interface SourceListener {
 
   /** issue is need Evaluate */
-  void beforeExecute(Sourcebean source, Params param);
+  void beforeExecute(SourceBean source, Params param);
 
-  void afterExecute(Sourcebean source, Params param);
+  void afterExecute(SourceBean source, Params param);
 
-  void onSuccess(Sourcebean source, Params param);
+  void onSuccess(SourceBean source, Params param);
 
-  void onFailure(Sourcebean source, Params param, Exception e);
+  void onFailure(SourceBean source, Params param, Exception e);
 }

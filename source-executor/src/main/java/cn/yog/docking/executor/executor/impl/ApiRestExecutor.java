@@ -4,7 +4,7 @@ import cn.yog.docking.executor.executor.AbstractExecutor;
 import cn.yog.docking.executor.executor.SourceExecutor;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.source.manager.bean.api.ApiRestSource;
-import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 
 /**
  * {@link ApiRestExecutor}
@@ -15,12 +15,12 @@ import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
 public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
     implements SourceExecutor<ApiRestSource> {
 
-  public ApiRestExecutor(Sourcebean<ApiRestSource> source) {
+  public ApiRestExecutor(SourceBean<ApiRestSource> source) {
     super(source);
   }
 
   @Override
-  public void execute(Sourcebean<ApiRestSource> source, Params params) {
+  public void execute(SourceBean<ApiRestSource> source, Params params) {
 
     // todo 处理全局参数
 

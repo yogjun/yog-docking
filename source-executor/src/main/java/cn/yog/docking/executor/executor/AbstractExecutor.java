@@ -2,7 +2,7 @@ package cn.yog.docking.executor.executor;
 
 import cn.yog.docking.executor.listener.SourceListener;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
-import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +14,16 @@ import java.util.List;
  * @version ${project.version} - 2023/4/12
  */
 public abstract class AbstractExecutor<T extends SourceSpec> implements SourceExecutor<T> {
-  private Sourcebean<T> source;
+  private SourceBean<T> source;
 
   @Deprecated private List<SourceListener> sourceListeners;
 
-  public AbstractExecutor(Sourcebean<T> source) {
+  public AbstractExecutor(SourceBean<T> source) {
     this.source = source;
     this.sourceListeners = new ArrayList();
   }
 
-  public Sourcebean<T> getSource() {
+  public SourceBean<T> getSource() {
     return source;
   }
 }

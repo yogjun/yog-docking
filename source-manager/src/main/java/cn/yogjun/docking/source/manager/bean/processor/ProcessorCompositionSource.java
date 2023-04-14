@@ -1,6 +1,6 @@
 package cn.yogjun.docking.source.manager.bean.processor;
 
-import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
@@ -14,11 +14,11 @@ import java.util.List;
  * @version ${project.version} - 2023/4/12
  */
 @Data
-public class ProcessorCompositionSource extends SourceSpec implements Iterable<Sourcebean> {
-  private List<Sourcebean> sources;
+public class ProcessorCompositionSource extends SourceSpec implements Iterable<SourceBean> {
+  private List<SourceBean> sources;
 
   @Override
-  public Iterator<Sourcebean> iterator() {
+  public Iterator<SourceBean> iterator() {
     return this.sources.iterator();
   }
 }

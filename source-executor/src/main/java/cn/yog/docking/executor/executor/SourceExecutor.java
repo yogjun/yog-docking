@@ -2,7 +2,7 @@ package cn.yog.docking.executor.executor;
 
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
-import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 
 /**
  * {@link SourceExecutor}
@@ -12,7 +12,7 @@ import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
  */
 public interface SourceExecutor<T extends SourceSpec> {
 
-  void execute(Sourcebean<T> source, Params params);
+  void execute(SourceBean<T> source, Params params);
 
   //  List<SourceExecutor> getNextExecutors();
 

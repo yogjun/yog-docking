@@ -1,6 +1,6 @@
 package cn.yogjun.docking.source.manager.bean.processor;
 
-import cn.yogjun.docking.source.manager.bean.base.Sourcebean;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import lombok.Data;
 
 /**
@@ -11,6 +11,6 @@ import lombok.Data;
  */
 @Data
 @Deprecated()
-public class ProcessorReferenceSource extends Sourcebean {
+public class ProcessorReferenceSource extends SourceBean {
   /** 引用类型时无需使用，直接用SourceBean即可 */
 }
