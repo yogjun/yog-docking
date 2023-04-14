@@ -67,4 +67,8 @@ public class Params implements Iterable<Entry<String, Object>> {
   public void setResponse(Object response) {
     this.response = response;
   }
+
+  public String toJson() {
+    return "";
+  }
 }

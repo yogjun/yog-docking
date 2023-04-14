@@ -41,6 +41,16 @@
                 <artifactId>common-bean</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>cn.yogjun</groupId>
+                <artifactId>handler-invoke</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.yogjun</groupId>
+                <artifactId>kits</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

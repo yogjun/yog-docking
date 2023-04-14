@@ -24,6 +24,7 @@ public enum SourceType {
   STRING("string字段处理", ""),
   ARRAY("数组字段处理", ""),
   /** processor */
+  REFERENCE("嵌套", ""),
   COMPOSITION("组合处理", ""),
   ;
 
