@@ -19,9 +19,10 @@ import java.util.Objects;
 @ToString
 public class Params implements Iterable<Entry<String, Object>> {
 
+  /** 参数 */
   private Map<String, Object> params = new HashMap();
-  // todo 使用params保存结果 or eventbus
-  //  private Object response;
+  /** 处理结果 */
+  private Object response;
 
   public void put(String name, Object param) {
     Objects.requireNonNull(name);
@@ -57,5 +58,13 @@ public class Params implements Iterable<Entry<String, Object>> {
   @Override
   public Iterator<Entry<String, Object>> iterator() {
     return this.params.entrySet().iterator();
+  }
+
+  public Object getResponse() {
+    return response;
+  }
+
+  public void setResponse(Object response) {
+    this.response = response;
   }
 }
