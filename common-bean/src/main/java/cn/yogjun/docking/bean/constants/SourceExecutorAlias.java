@@ -9,6 +9,6 @@ package cn.yogjun.docking.bean.constants;
 public interface SourceExecutorAlias {
   String REST = "restExecutorHandler";
   String WSDL = "wsdlExecutorHandler";
-  String JAVA_FUNCTION = "javaFunctionExecutorHandler";
-  String JAVA_SPRING_FUNCTION = "javaSpringFunctionExecutorHandler";
+  String METHOD_FUNCTION = "methodFunctionExecutorHandler";
+  String METHOD_SPRING_FUNCTION = "methodSpringFunctionExecutorHandler";
 }

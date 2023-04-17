@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Component(value = SourceExecutorAlias.JAVA_FUNCTION)
+@Component(value = SourceExecutorAlias.METHOD_FUNCTION)
 public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSource>
     implements SourceExecutor<FunctionMethodSource> {
 

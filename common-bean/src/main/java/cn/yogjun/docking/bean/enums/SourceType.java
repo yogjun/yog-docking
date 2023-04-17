@@ -17,8 +17,8 @@ public enum SourceType {
   REST("rest调用", SourceExecutorAlias.REST),
   WSDL("wsdl", SourceExecutorAlias.WSDL),
   /** JAVA FUNCTION */
-  JAVA_FUNCTION("java函数", SourceExecutorAlias.JAVA_FUNCTION),
-  JAVA_SPRING_FUNCTION("java函数", SourceExecutorAlias.JAVA_SPRING_FUNCTION),
+  JAVA_FUNCTION("java函数", SourceExecutorAlias.METHOD_FUNCTION),
+  JAVA_SPRING_FUNCTION("java函数", SourceExecutorAlias.METHOD_SPRING_FUNCTION),
   /** property */
   INTEGER("int字段处理", ""),
   STRING("string字段处理", ""),
