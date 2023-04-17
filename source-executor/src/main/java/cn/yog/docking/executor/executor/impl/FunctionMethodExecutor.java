@@ -44,6 +44,6 @@ public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSourc
             functionMethodSource.getClassName(),
             functionMethodSource.getMethodName(),
             params.asList());
-    // todo response 结果处理
+    params.setResponse(response);
   }
 }

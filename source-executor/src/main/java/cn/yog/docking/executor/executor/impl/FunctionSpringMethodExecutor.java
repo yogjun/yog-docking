@@ -44,6 +44,6 @@ public class FunctionSpringMethodExecutor extends AbstractExecutor<FunctionSprin
             functionMethodSource.getBeanId(),
             functionMethodSource.getMethodName(),
             params.asList());
-    // todo response 结果处理
+    params.setResponse(response);
   }
 }

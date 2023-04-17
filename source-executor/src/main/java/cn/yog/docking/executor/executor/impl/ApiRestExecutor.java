@@ -59,7 +59,7 @@ public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
     String response = httpResponse.body();
     httpResponse.getStatus();
     httpResponse.headers();
-    // todo 计算结果处理 （需要整理一整套上下文管理）
+    params.setResponse(response);
   }
 
   private Map<String, String> getHeaders() {
