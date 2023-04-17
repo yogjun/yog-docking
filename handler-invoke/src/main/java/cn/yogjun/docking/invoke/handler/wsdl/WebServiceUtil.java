@@ -18,11 +18,11 @@ public class WebServiceUtil {
   public static final int CXF_CLIENT_CONNECT_TIMEOUT = 30 * 1000;
   public static final int CXF_CLIENT_RECEIVE_TIMEOUT = 30 * 1000;
 
-  public <T> T getWebServiceByUrl(Class<T> clazz, String url) {
+  public static  <T> T getWebServiceByUrl(Class<T> clazz, String url) {
     return getWebServiceByUrl(clazz, url, CXF_CLIENT_CONNECT_TIMEOUT, CXF_CLIENT_RECEIVE_TIMEOUT);
   }
 
-  private <T> T getWebServiceByUrl(
+  private static  <T> T getWebServiceByUrl(
       Class<T> clazz, String url, Integer connectTimeout, Integer receiveTimeout) {
     // 用于创建JAX-WS代理的工厂，此类提供对用于设置代理的内部属性的访问。使用它可以提供比标准JAX-WS API更多的控制。
     JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();

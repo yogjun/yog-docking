@@ -8,6 +8,7 @@ import cn.yog.docking.executor.executor.SourceExecutor;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
 import cn.yogjun.docking.bean.exceptions.ApiRestErrorException;
+import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.invoke.handler.rest.RestKit;
 import cn.yogjun.docking.source.manager.bean.api.ApiRestSource;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
@@ -32,6 +33,16 @@ public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
   }
 
   @Override
+  public boolean validateSource(SourceBean<ApiRestSource> source) {
+    ApiRestSource apiRestSource = source.getSpec();
+    if (StrUtil.isAllNotBlank(apiRestSource.getMethod(), apiRestSource.getUrl())) {
+      return true;
+    }
+    throw new ErrorSourceException(
+        ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
+  }
+
+  @Override
   public void execute(SourceBean<ApiRestSource> source, Params params) {
     ApiRestSource apiRestSource = source.getSpec();
     String method = apiRestSource.getMethod();
@@ -45,7 +56,10 @@ public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
       throw new ApiRestErrorException(
           ApiRestErrorException.Code.UNSUPPORT_METHOD, source.toString());
     }
-    // todo 计算结果处理
+    httpResponse.body();
+    httpResponse.getStatus();
+    httpResponse.headers();
+    // todo 计算结果处理 （需要整理一整套上下文管理）
   }
 
   private Map<String, String> getHeaders() {

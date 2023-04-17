@@ -1,8 +1,8 @@
 package cn.yog.docking.executor.executor;
 
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
+import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 
 /**
  * {@link SourceExecutor}
@@ -12,7 +12,14 @@ import cn.yogjun.docking.source.manager.bean.base.SourceBean;
  */
 public interface SourceExecutor<T extends SourceSpec> {
 
-  void execute(SourceBean<T> source, Params params);
+  /**
+   * check source format
+   * @param source
+   * @return true:check pass
+   */
+  boolean validateSource(SourceBean<T> source);
+
+  void execute(SourceBean<T> source, Params params) throws ClassNotFoundException;
 
   //  List<SourceExecutor> getNextExecutors();
 

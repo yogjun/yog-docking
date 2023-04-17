@@ -32,6 +32,18 @@ public class MethodUtil {
     return t;
   }
 
+  public static Object invokeMethod(
+      Object obj, Class<?> clazz, String methodName, Object... params) {
+    Object t = null;
+    try {
+      Method method = clazz.getMethod(methodName, getParamClass(params));
+      t = method.invoke(obj, params);
+    } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+      log.error("invokeMethod error", e);
+    }
+    return t;
+  }
+
   public static Class<? extends Object>[] getParamClass(Object[] params) {
     Class<? extends Object>[] paramClass = null;
     if (params != null) {

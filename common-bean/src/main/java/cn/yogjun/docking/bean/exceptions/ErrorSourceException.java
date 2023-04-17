@@ -1,5 +1,6 @@
 package cn.yogjun.docking.bean.exceptions;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -12,8 +13,18 @@ import lombok.Getter;
 public class ErrorSourceException extends RuntimeException {
   private String errorSource;
 
-  public ErrorSourceException(String message, String errorSource) {
-    super(message);
+  public ErrorSourceException(Code code, String errorSource) {
+    super(code.getMessage());
     this.errorSource = errorSource;
+  }
+
+  @Getter
+  @AllArgsConstructor
+  public enum Code {
+    SOURCE_FORMAT_ERROR(500, "资源格式错误"),
+    ;
+
+    private Integer code;
+    private String message;
   }
 }

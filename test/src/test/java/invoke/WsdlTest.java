@@ -23,8 +23,7 @@ public class WsdlTest {
 
     String jsonInfo = null;
     try {
-      OrderOnlineService service =
-          new WebServiceUtil().getWebServiceByUrl(OrderOnlineService.class, URL);
+      OrderOnlineService service = WebServiceUtil.getWebServiceByUrl(OrderOnlineService.class, URL);
 
       CreateOrderRequest req = new CreateOrderRequest();
       req.setTrackingNo("HP000000001SG"); // 服务商跟踪号码

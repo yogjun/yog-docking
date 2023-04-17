@@ -4,11 +4,9 @@ import cn.hutool.core.lang.func.Func1;
 import cn.hutool.core.lang.func.LambdaUtil;
 import lombok.ToString;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * {@link Params} 执行器使用参数
@@ -20,7 +18,7 @@ import java.util.Objects;
 public class Params implements Iterable<Entry<String, Object>> {
 
   /** 参数 */
-  private Map<String, Object> params = new HashMap();
+  private Map<String, Object> params = new LinkedHashMap<>();
   /** 处理结果 */
   private Object response;
 
@@ -53,6 +51,10 @@ public class Params implements Iterable<Entry<String, Object>> {
 
   public Map<String, Object> asMap() {
     return this.params;
+  }
+
+  public List<Object> asList() {
+    return this.params.entrySet().stream().map(Entry::getValue).collect(Collectors.toList());
   }
 
   @Override
