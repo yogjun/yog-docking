@@ -16,5 +16,5 @@ public interface SourceExecutor<T extends SourceSpec> {
 
   //  List<SourceExecutor> getNextExecutors();
 
-  //  List<SourceListener> getSourceListener();
+  // to opt 添加 处理资源执行监听器 listeners
 }
