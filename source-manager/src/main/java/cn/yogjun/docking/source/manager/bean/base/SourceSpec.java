@@ -16,7 +16,7 @@ public class SourceSpec {
   /** 当出现多个的时候表示顺序 */
   private int order;
   /** 请求参数处理 */
-  private LinkedHashMap<String, SourceBean> request;
+  private LinkedHashMap<String, SourceBean> requestHandlers;
   /** 返回参数处理 */
-  private LinkedHashMap<String, SourceBean> response;
+  private LinkedHashMap<String, SourceBean> responseHandlers;
 }

@@ -34,8 +34,10 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
     // 预处理资源（含资源处理，资源格式校验等）
     this.preHandleSource(source);
     // todo  before execute
+    //    source.getRequestHandlers().entrySet().forEach();
     // 资源实际执行
     this.sourceExecute(source, params);
     // todo  after execute
+    //    source.getResponseHandlers().entrySet().forEach();
   }
 }
