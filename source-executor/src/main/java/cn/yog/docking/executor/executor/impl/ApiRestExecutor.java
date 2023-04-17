@@ -56,7 +56,7 @@ public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
       throw new ApiRestErrorException(
           ApiRestErrorException.Code.UNSUPPORT_METHOD, source.toString());
     }
-    httpResponse.body();
+    String response = httpResponse.body();
     httpResponse.getStatus();
     httpResponse.headers();
     // todo 计算结果处理 （需要整理一整套上下文管理）
