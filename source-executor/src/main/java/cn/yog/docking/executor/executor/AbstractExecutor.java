@@ -19,6 +19,8 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
 
   @Deprecated private List<SourceListener> sourceListeners;
 
+  public AbstractExecutor() {}
+
   public AbstractExecutor(SourceBean<T> source) {
     this.source = source;
     this.sourceListeners = new ArrayList();
@@ -28,7 +30,11 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
     return source;
   }
 
+  /** 资源执行 */
   protected abstract void sourceExecute(SourceBean<T> source, Params params);
+
+  /** 资源预处理（包含预处理） */
+  protected abstract boolean preHandleSource(SourceBean<T> source);
 
   public void execute(SourceBean source, Params params) {
     // 预处理资源（含资源处理，资源格式校验等）

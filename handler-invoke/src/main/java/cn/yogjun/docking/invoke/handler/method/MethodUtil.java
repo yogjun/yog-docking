@@ -1,6 +1,7 @@
 package cn.yogjun.docking.invoke.handler.method;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -20,8 +21,7 @@ public class MethodUtil {
     try {
       Class clazz = Class.forName(className);
       Object obj = clazz.getDeclaredConstructor().newInstance();
-      Method method = clazz.getMethod(methodName, getParamClass(params));
-      t = method.invoke(obj, params);
+      t = invokeMethod(obj, methodName, params);
     } catch (ClassNotFoundException
         | NoSuchMethodException
         | InstantiationException
@@ -32,16 +32,13 @@ public class MethodUtil {
     return t;
   }
 
-  public static Object invokeMethod(
-      Object obj, Class<?> clazz, String methodName, Object... params) {
-    Object t = null;
-    try {
-      Method method = clazz.getMethod(methodName, getParamClass(params));
-      t = method.invoke(obj, params);
-    } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-      log.error("invokeMethod error", e);
-    }
-    return t;
+  public static Object invokeMethod(Object service, String methodName, Object... params) {
+    // 找到方法
+    Method method =
+        ReflectionUtils.findMethod(
+            service.getClass(), methodName, MethodUtil.getParamClass(params));
+    // 执行方法
+    return ReflectionUtils.invokeMethod(method, service, params);
   }
 
   public static Class<? extends Object>[] getParamClass(Object[] params) {

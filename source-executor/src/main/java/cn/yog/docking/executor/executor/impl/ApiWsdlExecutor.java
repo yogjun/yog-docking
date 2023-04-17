@@ -50,7 +50,7 @@ public class ApiWsdlExecutor extends AbstractExecutor<ApiWsdlSource> {
     Class<?> clazz = apiWsdlSource.getClazz();
     Object service = WebServiceUtil.getWebServiceByUrl(clazz, apiWsdlSource.getUrl());
     Object response =
-        MethodUtil.invokeMethod(service, clazz, apiWsdlSource.getMethodName(), params.asList());
+        MethodUtil.invokeMethod(service, apiWsdlSource.getMethodName(), params.asList());
     params.setResponse(response);
   }
 }

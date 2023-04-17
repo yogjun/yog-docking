@@ -2,9 +2,6 @@ package cn.yogjun.docking.invoke.handler.method;
 
 import cn.hutool.extra.spring.SpringUtil;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ReflectionUtils;
-
-import java.lang.reflect.Method;
 
 @Component
 public class SpringMethodUtil {
@@ -20,11 +17,6 @@ public class SpringMethodUtil {
    */
   public static Object springInvokeMethod(String serviceName, String methodName, Object... params) {
     Object service = SpringUtil.getBean(serviceName);
-    // 找到方法
-    Method method =
-        ReflectionUtils.findMethod(
-            service.getClass(), methodName, MethodUtil.getParamClass(params));
-    // 执行方法
-    return ReflectionUtils.invokeMethod(method, service, params);
+    return MethodUtil.invokeMethod(service, methodName, params);
   }
 }
