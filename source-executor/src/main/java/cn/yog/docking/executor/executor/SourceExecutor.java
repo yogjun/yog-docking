@@ -12,14 +12,10 @@ import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
  */
 public interface SourceExecutor<T extends SourceSpec> {
 
-  /**
-   * check source format
-   * @param source
-   * @return true:check pass
-   */
-  boolean validateSource(SourceBean<T> source);
+  /** 资源预处理（包含预处理） */
+  boolean preHandleSource(SourceBean<T> source);
 
-  void execute(SourceBean<T> source, Params params) throws ClassNotFoundException;
+  void execute(SourceBean source, Params params);
 
   //  List<SourceExecutor> getNextExecutors();
 

@@ -13,5 +13,6 @@ import lombok.Data;
 public class ApiWsdlSource extends SourceSpec {
   private String url;
   private String serviceClass;
+  private Class<?> clazz;
   private String methodName;
 }

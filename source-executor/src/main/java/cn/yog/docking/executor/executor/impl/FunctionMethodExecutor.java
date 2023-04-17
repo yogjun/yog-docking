@@ -2,7 +2,6 @@ package cn.yog.docking.executor.executor.impl;
 
 import cn.hutool.core.util.StrUtil;
 import cn.yog.docking.executor.executor.AbstractExecutor;
-import cn.yog.docking.executor.executor.SourceExecutor;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
@@ -18,15 +17,14 @@ import org.springframework.stereotype.Component;
  * @version ${project.version} - 2023/4/14
  */
 @Component(value = SourceExecutorAlias.METHOD_FUNCTION)
-public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSource>
-    implements SourceExecutor<FunctionMethodSource> {
+public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSource> {
 
   public FunctionMethodExecutor(SourceBean<FunctionMethodSource> source) {
     super(source);
   }
 
   @Override
-  public boolean validateSource(SourceBean<FunctionMethodSource> source) {
+  public boolean preHandleSource(SourceBean<FunctionMethodSource> source) {
     FunctionMethodSource functionMethodSource = source.getSpec();
     if (StrUtil.isAllNotBlank(
         functionMethodSource.getMethodName(), functionMethodSource.getClassName())) {
@@ -37,7 +35,7 @@ public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSourc
   }
 
   @Override
-  public void execute(SourceBean<FunctionMethodSource> source, Params params) {
+  public void sourceExecute(SourceBean<FunctionMethodSource> source, Params params) {
     FunctionMethodSource functionMethodSource = source.getSpec();
     Object response =
         MethodUtil.invokeMethod(

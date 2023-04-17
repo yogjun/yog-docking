@@ -4,7 +4,6 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.ContentType;
 import cn.hutool.http.HttpResponse;
 import cn.yog.docking.executor.executor.AbstractExecutor;
-import cn.yog.docking.executor.executor.SourceExecutor;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
 import cn.yogjun.docking.bean.exceptions.ApiRestErrorException;
@@ -25,15 +24,14 @@ import java.util.Map;
  * @version ${project.version} - 2023/4/14
  */
 @Component(value = SourceExecutorAlias.REST)
-public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
-    implements SourceExecutor<ApiRestSource> {
+public class ApiRestExecutor extends AbstractExecutor<ApiRestSource> {
 
   public ApiRestExecutor(SourceBean<ApiRestSource> source) {
     super(source);
   }
 
   @Override
-  public boolean validateSource(SourceBean<ApiRestSource> source) {
+  public boolean preHandleSource(SourceBean<ApiRestSource> source) {
     ApiRestSource apiRestSource = source.getSpec();
     if (StrUtil.isAllNotBlank(apiRestSource.getMethod(), apiRestSource.getUrl())) {
       return true;
@@ -43,7 +41,7 @@ public class ApiRestExecutor extends AbstractExecutor<ApiRestSource>
   }
 
   @Override
-  public void execute(SourceBean<ApiRestSource> source, Params params) {
+  public void sourceExecute(SourceBean<ApiRestSource> source, Params params) {
     ApiRestSource apiRestSource = source.getSpec();
     String method = apiRestSource.getMethod();
     String url = apiRestSource.getUrl();
