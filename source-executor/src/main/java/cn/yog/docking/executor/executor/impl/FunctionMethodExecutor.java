@@ -19,10 +19,6 @@ import org.springframework.stereotype.Component;
 @Component(value = SourceExecutorAlias.METHOD_FUNCTION)
 public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSource> {
 
-  public FunctionMethodExecutor(SourceBean<FunctionMethodSource> source) {
-    super(source);
-  }
-
   @Override
   public boolean preHandleSource(SourceBean<FunctionMethodSource> source) {
     FunctionMethodSource functionMethodSource = source.getSpec();

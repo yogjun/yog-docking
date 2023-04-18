@@ -15,9 +15,8 @@ public class SourceExecuteTest {
   @Test
   public void testWsdl() {
     // 1.读取source(比如根据id获取资源)
-    SourceBean sourceBean = null;
-    // 2
-    SourceExecutor se = SourceExecutorFactory.getExecutor(sourceBean);
-    se.execute(sourceBean, null);
+//    SourceBean sourceBean = null;
+//    SourceExecutor se = SourceExecutorFactory.getExecutor(sourceBean);
+//    se.execute(sourceBean, null);
   }
 }

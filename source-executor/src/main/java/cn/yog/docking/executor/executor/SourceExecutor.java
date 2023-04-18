@@ -12,7 +12,7 @@ import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
  */
 public interface SourceExecutor<T extends SourceSpec> {
 
-  void execute(SourceBean source, Params params);
+  void execute(SourceBean<T> source, Params params);
 
   //  List<SourceExecutor> getNextExecutors();
 

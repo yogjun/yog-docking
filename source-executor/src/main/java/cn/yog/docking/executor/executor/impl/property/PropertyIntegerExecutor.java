@@ -18,10 +18,6 @@ import org.springframework.stereotype.Component;
 @Component(value = SourceExecutorAlias.WSDL)
 public class PropertyIntegerExecutor extends AbstractExecutor<PropertyIntegerSource> {
 
-  public PropertyIntegerExecutor(SourceBean<PropertyIntegerSource> source) {
-    super(source);
-  }
-
   @Override
   public boolean preHandleSource(SourceBean<PropertyIntegerSource> source) {
     PropertyIntegerSource propertyIntegerSource = source.getSpec();

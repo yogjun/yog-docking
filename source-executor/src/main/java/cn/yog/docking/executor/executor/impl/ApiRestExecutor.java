@@ -26,10 +26,6 @@ import java.util.Map;
 @Component(value = SourceExecutorAlias.REST)
 public class ApiRestExecutor extends AbstractExecutor<ApiRestSource> {
 
-  public ApiRestExecutor(SourceBean<ApiRestSource> source) {
-    super(source);
-  }
-
   @Override
   public boolean preHandleSource(SourceBean<ApiRestSource> source) {
     ApiRestSource apiRestSource = source.getSpec();

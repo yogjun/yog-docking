@@ -22,10 +22,6 @@ import org.springframework.stereotype.Component;
 @Component(value = SourceExecutorAlias.WSDL)
 public class ApiWsdlExecutor extends AbstractExecutor<ApiWsdlSource> {
 
-  public ApiWsdlExecutor(SourceBean<ApiWsdlSource> source) {
-    super(source);
-  }
-
   @Override
   public boolean preHandleSource(SourceBean<ApiWsdlSource> source) {
     ApiWsdlSource apiWsdlSource = source.getSpec();
