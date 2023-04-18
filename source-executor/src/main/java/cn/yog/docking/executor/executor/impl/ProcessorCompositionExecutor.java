@@ -28,6 +28,7 @@ public class ProcessorCompositionExecutor extends AbstractExecutor<ProcessorComp
         compositionSource.getSources().stream()
             .map(
                 sb -> {
+                  // todo 嵌套调用，参数和返回值全局管理
                   SourceExecutor se = SourceExecutorFactory.getExecutor(sb);
                   se.execute(sb, params);
                   return params.getResponse();

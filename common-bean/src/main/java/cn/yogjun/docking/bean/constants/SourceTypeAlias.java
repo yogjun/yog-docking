@@ -28,6 +28,7 @@ public interface SourceTypeAlias {
 
   /** property */
   String PROPERTY_INTEGER = "property-integer";
+  String PROPERTY_STRING = "property-string";
 
   /** 所有类型字段 */
   Set<String> sourceTypes =
