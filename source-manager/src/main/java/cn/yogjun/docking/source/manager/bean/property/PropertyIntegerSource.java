@@ -1,5 +1,6 @@
 package cn.yogjun.docking.source.manager.bean.property;
 
+import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
@@ -12,4 +13,12 @@ import lombok.Data;
 @Data
 public class PropertyIntegerSource extends SourceSpec {
   private Integer value;
+
+  @Override
+  public void checkSource() {
+    if (null == value) {
+      throw new ErrorSourceException(
+          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
+    }
+  }
 }

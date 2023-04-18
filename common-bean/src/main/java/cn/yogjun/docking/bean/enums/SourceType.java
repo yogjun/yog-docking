@@ -1,6 +1,6 @@
 package cn.yogjun.docking.bean.enums;
 
-import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
+import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -12,13 +12,14 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
+@Deprecated
 public enum SourceType {
   /** API */
-  REST("rest调用", SourceExecutorAlias.REST),
-  WSDL("wsdl", SourceExecutorAlias.WSDL),
+  REST("rest调用", SourceTypeAlias.REST),
+  WSDL("wsdl", SourceTypeAlias.WSDL),
   /** JAVA FUNCTION */
-  JAVA_FUNCTION("java函数", SourceExecutorAlias.METHOD_FUNCTION),
-  JAVA_SPRING_FUNCTION("java函数", SourceExecutorAlias.METHOD_SPRING_FUNCTION),
+  JAVA_FUNCTION("java函数", SourceTypeAlias.METHOD_FUNCTION),
+  JAVA_SPRING_FUNCTION("java函数", SourceTypeAlias.METHOD_SPRING_FUNCTION),
   /** property */
   INTEGER("int字段处理", ""),
   STRING("string字段处理", ""),

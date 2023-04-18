@@ -2,7 +2,7 @@ package cn.yog.docking.executor.executor.impl.property;
 
 import cn.yog.docking.executor.executor.AbstractExecutor;
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
+import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.property.PropertyIntegerSource;
 import lombok.extern.slf4j.Slf4j;
@@ -15,11 +15,8 @@ import org.springframework.stereotype.Component;
  * @version ${project.version} - 2023/4/14
  */
 @Slf4j
-@Component(value = SourceExecutorAlias.WSDL)
+@Component(value = SourceTypeAlias.WSDL)
 public class PropertyIntegerExecutor extends AbstractExecutor<PropertyIntegerSource> {
-
-  @Override
-  public void preHandleSource(SourceBean<PropertyIntegerSource> source) {}
 
   @Override
   public void sourceExecute(SourceBean<PropertyIntegerSource> source, Params params) {

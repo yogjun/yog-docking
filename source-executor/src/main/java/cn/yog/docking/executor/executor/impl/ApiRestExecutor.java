@@ -5,9 +5,8 @@ import cn.hutool.http.ContentType;
 import cn.hutool.http.HttpResponse;
 import cn.yog.docking.executor.executor.AbstractExecutor;
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
+import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ApiRestErrorException;
-import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.invoke.handler.rest.RestKit;
 import cn.yogjun.docking.source.manager.bean.api.ApiRestSource;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
@@ -23,18 +22,8 @@ import java.util.Map;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Component(value = SourceExecutorAlias.REST)
+@Component(value = SourceTypeAlias.REST)
 public class ApiRestExecutor extends AbstractExecutor<ApiRestSource> {
-
-  @Override
-  public void preHandleSource(SourceBean<ApiRestSource> source) {
-//    ApiRestSource apiRestSource = source.getSpec();
-//    if (StrUtil.isAllNotBlank(apiRestSource.getMethod(), apiRestSource.getUrl())) {
-//      return true;
-//    }
-//    throw new ErrorSourceException(
-//        ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
-  }
 
   @Override
   public void sourceExecute(SourceBean<ApiRestSource> source, Params params) {

@@ -1,5 +1,7 @@
 package cn.yogjun.docking.source.manager.bean.api;
 
+import cn.hutool.core.util.StrUtil;
+import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
@@ -19,4 +21,12 @@ public class ApiRestSource extends SourceSpec {
 
   /** json/xml */
   private String dataType;
+
+  @Override
+  public void checkSource() {
+    if (!StrUtil.isAllNotBlank(this.getMethod(), this.getUrl())) {
+      throw new ErrorSourceException(
+          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
+    }
+  }
 }

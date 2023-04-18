@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
  * @version ${project.version} - 2023/4/12
  */
 @Data
-public class SourceSpec {
+public abstract class SourceSpec implements SourceHandle {
 
   /** 当出现多个的时候表示顺序 */
   private int order;

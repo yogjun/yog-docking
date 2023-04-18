@@ -1,10 +1,8 @@
 package cn.yog.docking.executor.executor.impl;
 
-import cn.hutool.core.util.StrUtil;
 import cn.yog.docking.executor.executor.AbstractExecutor;
 import cn.yog.docking.executor.param.Params;
-import cn.yogjun.docking.bean.constants.SourceExecutorAlias;
-import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
+import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.invoke.handler.method.MethodUtil;
 import cn.yogjun.docking.invoke.handler.wsdl.WebServiceUtil;
 import cn.yogjun.docking.source.manager.bean.api.ApiWsdlSource;
@@ -19,25 +17,8 @@ import org.springframework.stereotype.Component;
  * @version ${project.version} - 2023/4/14
  */
 @Slf4j
-@Component(value = SourceExecutorAlias.WSDL)
+@Component(value = SourceTypeAlias.WSDL)
 public class ApiWsdlExecutor extends AbstractExecutor<ApiWsdlSource> {
-
-  @Override
-  public void preHandleSource(SourceBean<ApiWsdlSource> source) {
-    ApiWsdlSource apiWsdlSource = source.getSpec();
-//    if (!StrUtil.isAllNotBlank(
-//        apiWsdlSource.getUrl(), apiWsdlSource.getMethodName(), apiWsdlSource.getServiceClass())) {
-//      throw new ErrorSourceException(
-//          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
-//    }
-    try {
-      Class<?> clazz = Class.forName(apiWsdlSource.getServiceClass());
-      apiWsdlSource.setClazz(clazz);
-    } catch (ClassNotFoundException e) {
-      throw new ErrorSourceException(
-          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
-    }
-  }
 
   @Override
   public void sourceExecute(SourceBean<ApiWsdlSource> source, Params params) {
