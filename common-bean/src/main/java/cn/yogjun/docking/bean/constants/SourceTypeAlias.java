@@ -21,9 +21,22 @@ public interface SourceTypeAlias {
 
   String METHOD_SPRING_FUNCTION = "function-method-spring";
 
-  /** property */
   /** processor */
+  String PROCESSOR_REFERENCE = "processor-reference";
+
+  String PROCESSOR_COMPOSITION = "processor-composition";
+
+  /** property */
+  String PROPERTY_INTEGER = "property-integer";
 
   /** 所有类型字段 */
-  Set<String> sourceTypes = Sets.newHashSet(REST, WSDL, METHOD_FUNCTION, METHOD_SPRING_FUNCTION);
+  Set<String> sourceTypes =
+      Sets.newHashSet(
+          REST,
+          WSDL,
+          METHOD_FUNCTION,
+          METHOD_SPRING_FUNCTION,
+          PROPERTY_INTEGER,
+          PROCESSOR_REFERENCE,
+          PROCESSOR_COMPOSITION);
 }

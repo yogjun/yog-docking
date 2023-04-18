@@ -34,7 +34,7 @@ public class ApiRestExecutor extends AbstractExecutor<ApiRestSource> {
     if (StrUtil.equals(method, RequestMethod.GET.name())) {
       httpResponse = RestKit.getDelegate().getToResponse(url, params.asMap(), getHeaders());
     } else if (StrUtil.equals(method, RequestMethod.POST.name())) {
-      httpResponse = RestKit.getDelegate().postToResponse(url, params.toString(), getHeaders());
+      httpResponse = RestKit.getDelegate().postToResponse(url, params.toJson(), getHeaders());
     } else {
       throw new ApiRestErrorException(
           ApiRestErrorException.Code.UNSUPPORT_METHOD, source.toString());
