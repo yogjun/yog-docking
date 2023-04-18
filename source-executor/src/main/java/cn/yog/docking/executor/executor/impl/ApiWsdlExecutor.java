@@ -23,13 +23,13 @@ import org.springframework.stereotype.Component;
 public class ApiWsdlExecutor extends AbstractExecutor<ApiWsdlSource> {
 
   @Override
-  public boolean preHandleSource(SourceBean<ApiWsdlSource> source) {
+  public void preHandleSource(SourceBean<ApiWsdlSource> source) {
     ApiWsdlSource apiWsdlSource = source.getSpec();
-    if (!StrUtil.isAllNotBlank(
-        apiWsdlSource.getUrl(), apiWsdlSource.getMethodName(), apiWsdlSource.getServiceClass())) {
-      throw new ErrorSourceException(
-          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
-    }
+//    if (!StrUtil.isAllNotBlank(
+//        apiWsdlSource.getUrl(), apiWsdlSource.getMethodName(), apiWsdlSource.getServiceClass())) {
+//      throw new ErrorSourceException(
+//          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
+//    }
     try {
       Class<?> clazz = Class.forName(apiWsdlSource.getServiceClass());
       apiWsdlSource.setClazz(clazz);
@@ -37,7 +37,6 @@ public class ApiWsdlExecutor extends AbstractExecutor<ApiWsdlSource> {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
     }
-    return true;
   }
 
   @Override

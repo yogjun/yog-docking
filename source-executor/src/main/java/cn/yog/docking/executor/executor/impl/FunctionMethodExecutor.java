@@ -20,14 +20,14 @@ import org.springframework.stereotype.Component;
 public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSource> {
 
   @Override
-  public boolean preHandleSource(SourceBean<FunctionMethodSource> source) {
-    FunctionMethodSource functionMethodSource = source.getSpec();
-    if (StrUtil.isAllNotBlank(
-        functionMethodSource.getMethodName(), functionMethodSource.getClassName())) {
-      return true;
-    }
-    throw new ErrorSourceException(
-        ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
+  public void preHandleSource(SourceBean<FunctionMethodSource> source) {
+//    FunctionMethodSource functionMethodSource = source.getSpec();
+//    if (StrUtil.isAllNotBlank(
+//        functionMethodSource.getMethodName(), functionMethodSource.getClassName())) {
+//      return true;
+//    }
+//    throw new ErrorSourceException(
+//        ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
   }
 
   @Override

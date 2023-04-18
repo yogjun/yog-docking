@@ -27,13 +27,13 @@ import java.util.Map;
 public class ApiRestExecutor extends AbstractExecutor<ApiRestSource> {
 
   @Override
-  public boolean preHandleSource(SourceBean<ApiRestSource> source) {
-    ApiRestSource apiRestSource = source.getSpec();
-    if (StrUtil.isAllNotBlank(apiRestSource.getMethod(), apiRestSource.getUrl())) {
-      return true;
-    }
-    throw new ErrorSourceException(
-        ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
+  public void preHandleSource(SourceBean<ApiRestSource> source) {
+//    ApiRestSource apiRestSource = source.getSpec();
+//    if (StrUtil.isAllNotBlank(apiRestSource.getMethod(), apiRestSource.getUrl())) {
+//      return true;
+//    }
+//    throw new ErrorSourceException(
+//        ErrorSourceException.Code.SOURCE_FORMAT_ERROR, source.toString());
   }
 
   @Override

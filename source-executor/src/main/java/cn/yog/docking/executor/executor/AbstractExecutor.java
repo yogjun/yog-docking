@@ -18,7 +18,7 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
   protected abstract void sourceExecute(SourceBean<T> source, Params params);
 
   /** 资源预处理（包含预处理） */
-  protected abstract boolean preHandleSource(SourceBean<T> source);
+  protected abstract void preHandleSource(SourceBean<T> source);
 
   public void execute(SourceBean source, Params params) {
     // 预处理资源（含资源处理，资源格式校验等）

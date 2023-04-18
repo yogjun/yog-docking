@@ -19,10 +19,7 @@ import org.springframework.stereotype.Component;
 public class PropertyIntegerExecutor extends AbstractExecutor<PropertyIntegerSource> {
 
   @Override
-  public boolean preHandleSource(SourceBean<PropertyIntegerSource> source) {
-    PropertyIntegerSource propertyIntegerSource = source.getSpec();
-    return true;
-  }
+  public void preHandleSource(SourceBean<PropertyIntegerSource> source) {}
 
   @Override
   public void sourceExecute(SourceBean<PropertyIntegerSource> source, Params params) {
