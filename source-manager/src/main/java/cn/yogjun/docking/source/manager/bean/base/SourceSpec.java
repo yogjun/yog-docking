@@ -12,9 +12,6 @@ import java.util.LinkedHashMap;
  */
 @Data
 public abstract class SourceSpec implements SourceHandle {
-
-  /** 当出现多个的时候表示顺序 */
-  private int order;
   /** 请求参数处理 */
   private LinkedHashMap<String, SourceBean> requestHandlers;
   /** 返回参数处理 */

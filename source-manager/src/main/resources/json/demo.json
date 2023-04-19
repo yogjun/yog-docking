@@ -23,17 +23,19 @@
   "spec(processor-reference3)": {
     "id": "hnp-docking-api-php-hellowwordchild"
   },
-  "spec(processor-composition)": [
-    {
-      "id": "hnp-docking-api-php-hellowwordchild",
-      "version": 1
-    },
-    {
-      "id": "",
-      "type": "api-restful",
-      "version": 1
-    }
-  ],
+  "spec(processor-composition)": {
+    "sources": [
+      {
+        "id": "hnp-docking-api-php-hellowwordchild",
+        "version": 1
+      },
+      {
+        "id": "",
+        "type": "api-restful",
+        "version": 1
+      }
+    ]
+  },
   "spec(api-restful)": {
     "method": "GET",
     "uri": "www.abc.com/mn",

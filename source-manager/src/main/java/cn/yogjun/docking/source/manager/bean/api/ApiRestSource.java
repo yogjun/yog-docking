@@ -1,8 +1,10 @@
 package cn.yogjun.docking.source.manager.bean.api;
 
 import cn.hutool.core.util.StrUtil;
+import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
+import cn.yogjun.docking.source.manager.support.Resource;
 import lombok.Data;
 
 import java.util.Map;
@@ -14,6 +16,7 @@ import java.util.Map;
  * @version ${project.version} - 2023/4/12
  */
 @Data
+@Resource(type = SourceTypeAlias.REST)
 public class ApiRestSource extends SourceSpec {
   /** http method */
   private String method;

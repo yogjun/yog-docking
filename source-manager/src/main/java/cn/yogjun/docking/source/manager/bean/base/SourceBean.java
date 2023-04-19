@@ -3,6 +3,7 @@ package cn.yogjun.docking.source.manager.bean.base;
 import cn.hutool.core.util.StrUtil;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
+import cn.yogjun.docking.source.manager.support.Resource;
 import lombok.Data;
 
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  * @version ${project.version} - 2023/4/11
  */
 @Data
+@Resource(type = SourceTypeAlias.PUBLIC, notes = "公共资源，具体执行内容在成员spec中")
 public class SourceBean<T extends SourceSpec> extends SourceSpec {
 
   /** id type-group-name,example: "api-rest-ccc-d" */
@@ -28,6 +30,9 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
 
   /** 是否同步执行 */
   protected boolean sync = true;
+
+  /** 当出现多个的时候表示顺序 */
+  private int order;
 
   private T spec;
 

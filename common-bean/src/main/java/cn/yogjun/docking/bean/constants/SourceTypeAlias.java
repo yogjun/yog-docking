@@ -11,6 +11,8 @@ import java.util.Set;
  * @version ${project.version} - 2023/4/11
  */
 public interface SourceTypeAlias {
+  /** 公共资源 */
+  String PUBLIC = "public";
   /** api */
   String REST = "api-rest";
 
@@ -28,9 +30,10 @@ public interface SourceTypeAlias {
 
   /** property */
   String PROPERTY_INTEGER = "property-integer";
+
   String PROPERTY_STRING = "property-string";
 
-  /** 所有类型字段 */
+  /** 所有可用类型字段 */
   Set<String> sourceTypes =
       Sets.newHashSet(
           REST,

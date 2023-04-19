@@ -1,9 +1,13 @@
 package cn.yogjun.docking.source.manager.bean.processor;
 
+import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
+import cn.yogjun.docking.source.manager.support.Resource;
 import lombok.Data;
+
+import java.util.Map;
 
 /**
  * {@link ProcessorReferenceSource}
@@ -12,6 +16,7 @@ import lombok.Data;
  * @version ${project.version} - 2023/4/12
  */
 @Data
+@Resource(type = SourceTypeAlias.PROCESSOR_REFERENCE)
 public class ProcessorReferenceSource extends SourceSpec {
   private SourceBean source;
 
@@ -21,5 +26,10 @@ public class ProcessorReferenceSource extends SourceSpec {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
+  }
+
+  @Override
+  public SourceSpec buildSource(Map<String, Object> map) {
+    return new SourceBean().buildSource(map);
   }
 }
