@@ -1,5 +1,6 @@
 package manager;
 
+import cn.yogjun.docking.source.manager.bean.base.RootSourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.support.JsonSourceReader;
 import org.junit.Test;
@@ -20,7 +21,7 @@ public class SourceBuildTest {
     FileReader fileReader =
         new FileReader(
             "/Users/miaojun/code/java/yog-docking/test/src/test/resources/demo-api-rest2.json");
-    SourceBean sourceBean = new JsonSourceReader().read(fileReader);
+    RootSourceBean sourceBean = new JsonSourceReader().read(fileReader);
     System.out.println(sourceBean);
   }
 }
