@@ -1,6 +1,8 @@
 package cn.yogjun.docking.source.manager.bean.processor;
 
+import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
+import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
 /**
@@ -10,7 +12,14 @@ import lombok.Data;
  * @version ${project.version} - 2023/4/12
  */
 @Data
-@Deprecated()
-public class ProcessorReferenceSource extends SourceBean {
-  /** 引用类型时无需使用，直接用SourceBean即可 */
+public class ProcessorReferenceSource extends SourceSpec {
+  private SourceBean source;
+
+  @Override
+  public void checkSource() {
+    if (null == source) {
+      throw new ErrorSourceException(
+          ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
+    }
+  }
 }

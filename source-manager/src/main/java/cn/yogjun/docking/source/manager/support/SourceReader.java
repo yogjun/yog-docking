@@ -11,6 +11,5 @@ import java.io.Reader;
  * @version ${project.version} - 2023/4/13
  */
 public interface SourceReader {
-  // reader impl
   SourceBean read(Reader reader) throws Exception;
 }

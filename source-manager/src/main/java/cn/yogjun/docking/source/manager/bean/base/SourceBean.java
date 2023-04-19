@@ -41,4 +41,37 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
   }
+
+  //  @Override
+  //  public SourceSpec buildSource(Map<String, Object> map) {
+  //    SourceBean sourceBean = new SourceBean();
+  //    // id
+  //    String id = (String) map.get("id");
+  //    sourceBean.setId(id);
+  //    // version
+  //    Integer version = (Integer) map.get("version");
+  //    sourceBean.setVersion(null != version ? version : 0);
+  //    // order
+  //    Integer order = (Integer) map.get("order");
+  //    sourceBean.setOrder(null != order ? order : Integer.MAX_VALUE);
+  //    // type
+  //    String type = (String) map.get("type");
+  //    sourceBean.setType(type);
+  //    // sync
+  //    Boolean sync = (Boolean) map.get("sync");
+  //    sourceBean.setSync(null != sync ? sync : false);
+  //    // metadata
+  //    Map<String, Object> metadata = (Map<String, Object>) map.get("metadata");
+  //    sourceBean.setMetadata(
+  //            SourceMetaBean.builder()
+  //                    .group((String) metadata.get("group"))
+  //                    .name((String) metadata.get("name"))
+  //                    .remark((String) metadata.get("remark"))
+  //                    .build());
+  //    // spec
+  //    Map<String, Object> spec = (Map<String, Object>) map.get("spec");
+  //    sourceBean.setSpec();
+  //    sourceBean.checkSource();
+  //    return sourceBean;
+  //  }
 }
