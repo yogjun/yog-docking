@@ -3,8 +3,8 @@ package cn.yogjun.docking.source.manager.resource;
 import cn.hutool.core.util.ClassUtil;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 /**
  * {@link ResourceManager}
  *
@@ -20,7 +20,7 @@ public class ResourceManager {
   }
 
   public <T extends SourceSpec> Map<String, Class<T>> initResourceMap() {
-    Map<String, Class<T>> resourceMap = new ConcurrentHashMap<>();
+    Map<String, Class<T>> resourceMap = new HashMap<>();
     for (Class<?> clazz : ClassUtil.scanPackageByAnnotation(null, Resource.class)) {
       Resource resource = clazz.getAnnotation(Resource.class);
       String resourceType = resource.type();

@@ -3,6 +3,7 @@ package cn.yogjun.docking.source.manager.bean.base;
 import cn.hutool.core.util.StrUtil;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
+import cn.yogjun.docking.source.manager.builder.SourceBuilderFactory;
 import cn.yogjun.docking.source.manager.resource.Resource;
 import lombok.Data;
 
@@ -69,15 +70,17 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
     sourceBean.setSync(null != sync ? sync : false);
     // metadata
     Map<String, Object> metadata = (Map<String, Object>) map.get("metadata");
-    sourceBean.setMetadata(
-        SourceMetaBean.builder()
-            .group((String) metadata.get("group"))
-            .name((String) metadata.get("name"))
-            .remark((String) metadata.get("remark"))
-            .build());
+    if (null != metadata) {
+      sourceBean.setMetadata(
+          SourceMetaBean.builder()
+              .group((String) metadata.get("group"))
+              .name((String) metadata.get("name"))
+              .remark((String) metadata.get("remark"))
+              .build());
+    }
     // spec
     Map<String, Object> spec = (Map<String, Object>) map.get("spec");
-    //    sourceBean.setSpec();
+    sourceBean.setSpec(SourceBuilderFactory.getSourceHandleBuilder(type).buildSource(spec));
     sourceBean.checkSource();
     return sourceBean;
   }
