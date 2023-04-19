@@ -39,32 +39,31 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
 
   @Override
   public void checkSource() {
-    // 校验类型和id不能为空
-    // 规格参数不能为空
-    if (!StrUtil.isAllNotBlank(this.getId(), this.getType())
-        || null == spec
-        || !SourceTypeAlias.sourceTypes.contains(type)) {
+    if (!StrUtil.isAllNotBlank(this.getType()) || !SourceTypeAlias.sourceTypes.contains(type)) {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
   }
 
+  protected SourceBean getInstance() {
+    return new SourceBean();
+  }
+
   @Override
   protected SourceSpec buildSource(Map<String, Object> map) {
-    SourceBean sourceBean =
-        (SourceBean) SourceBuilderFactory.getSourceHandleBuilder(SourceTypeAlias.PUBLIC);
+    SourceBean sourceBean = getInstance();
     // id
     String id = (String) map.get("id");
     sourceBean.setId(id);
+    // type
+    String type = (String) map.get("type");
+    sourceBean.setType(type);
     // version
     Integer version = (Integer) map.get("version");
     sourceBean.setVersion(null != version ? version : 0);
     // order
     Integer order = (Integer) map.get("order");
     sourceBean.setOrder(null != order ? order : Integer.MAX_VALUE);
-    // type
-    String type = (String) map.get("type");
-    sourceBean.setType(type);
     // sync
     Boolean sync = (Boolean) map.get("sync");
     sourceBean.setSync(null != sync ? sync : false);

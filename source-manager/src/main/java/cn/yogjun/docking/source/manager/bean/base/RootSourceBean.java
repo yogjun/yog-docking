@@ -24,4 +24,9 @@ public class RootSourceBean extends SourceBean {
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
   }
+
+  @Override
+  protected SourceBean getInstance(){
+    return new RootSourceBean();
+  }
 }

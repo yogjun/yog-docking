@@ -1,31 +1,29 @@
-package cn.yogjun.docking.source.manager.bean.property;
+package cn.yogjun.docking.source.manager.bean.processor;
 
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
+import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
+import cn.yogjun.docking.source.manager.builder.SourceBuilderFactory;
 import cn.yogjun.docking.source.manager.resource.Resource;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
 /**
- * {@link PropertyStringSource}
+ * {@link ProcessorNestedSource}
  *
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/12
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Resource(type = SourceTypeAlias.PROPERTY_STRING)
-public class PropertyStringSource extends SourceSpec {
-  private String value;
+@Resource(type = SourceTypeAlias.PROCESSOR_NESTED)
+public class ProcessorNestedSource extends SourceSpec {
+  private SourceBean source;
 
   @Override
   public void checkSource() {
-    if (null == value) {
+    if (null == source) {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
@@ -33,8 +31,6 @@ public class PropertyStringSource extends SourceSpec {
 
   @Override
   protected SourceSpec buildSource(Map<String, Object> map) {
-    PropertyStringSource propertyStringSource = new PropertyStringSource();
-    propertyStringSource.setValue((String) map.get("value"));
-    return propertyStringSource;
+    return SourceBuilderFactory.getSourceHandleBuilder(SourceTypeAlias.PUBLIC).build(map);
   }
 }

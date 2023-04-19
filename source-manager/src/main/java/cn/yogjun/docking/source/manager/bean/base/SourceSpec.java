@@ -26,8 +26,8 @@ public abstract class SourceSpec implements SourceHandle {
   @Override
   public SourceSpec build(Map<String, Object> map) {
     SourceSpec ss = buildSource(map);
-    buildRequests(map);
-    buildResponses(map);
+    ss.buildRequests(map);
+    ss.buildResponses(map);
     ss.checkSource();
     return ss;
   }

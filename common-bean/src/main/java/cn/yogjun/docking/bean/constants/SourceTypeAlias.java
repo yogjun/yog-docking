@@ -26,6 +26,8 @@ public interface SourceTypeAlias {
   /** processor */
   String PROCESSOR_REFERENCE = "processor-reference";
 
+  String PROCESSOR_NESTED = "processor-nested";
+
   String PROCESSOR_COMPOSITION = "processor-composition";
 
   /** property */
@@ -41,6 +43,8 @@ public interface SourceTypeAlias {
           METHOD_FUNCTION,
           METHOD_SPRING_FUNCTION,
           PROPERTY_INTEGER,
+          PROPERTY_STRING,
           PROCESSOR_REFERENCE,
+          PROCESSOR_NESTED,
           PROCESSOR_COMPOSITION);
 }

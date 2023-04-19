@@ -12,7 +12,7 @@
     "dataType": "json/xml",
     "request": {
       "name": {
-        "type": "processor-reference",
+        "type": "processor-nested",
         "spec": {
           "id": "",
           "type": "property-string",
@@ -32,22 +32,22 @@
         "id": "",
         "type": "processor-reference",
         "spec": {
-          "id": "api-restful-hnp-docking-xxx-request",
-          "type": "",
-          "spec": {}
+          "id": "api-restful-hnp-docking-xxx-request"
         }
       },
       "this": {
         "type": "processor-reference",
-        "id": "api-restful-hnp-docking-xxx-request",
-        "type": "",
-        "spec": {}
+        "spec": {
+          "id": "api-restful-hnp-docking-xxx-request"
+        }
       }
     },
     "response": {
       "this": {
         "type": "processor-reference",
-        "id": "api-restful-hnp-docking-xxx-response"
+        "spec": {
+          "id": "api-restful-hnp-docking-xxx-response"
+        }
       }
     }
   }
