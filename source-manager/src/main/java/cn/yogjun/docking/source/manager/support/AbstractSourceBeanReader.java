@@ -13,12 +13,12 @@ import java.util.Map;
  */
 public abstract class AbstractSourceBeanReader implements SourceReader {
 
-  public SourceBean read(Reader reader) throws Exception {
+  public SourceBean read(Reader reader) {
     Map<String, Object> sources = loadSource(reader);
     return createSource(sources);
   }
 
-  protected abstract Map<String, Object> loadSource(Reader reader) throws Exception;
+  protected abstract Map<String, Object> loadSource(Reader reader);
 
   protected SourceBean createSource(Map<String, Object> map) {
     return (SourceBean) new SourceBean().build(map);

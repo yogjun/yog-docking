@@ -24,7 +24,7 @@ public class YamlSourceReader extends AbstractSourceBeanReader {
   }
 
   @Override
-  protected Map<String, Object> loadSource(Reader reader) throws Exception {
+  protected Map<String, Object> loadSource(Reader reader) {
     return this.yaml.load(reader);
   }
 }
