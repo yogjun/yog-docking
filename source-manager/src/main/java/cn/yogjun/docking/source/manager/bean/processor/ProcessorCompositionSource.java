@@ -5,6 +5,7 @@ import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
+import cn.yogjun.docking.source.manager.builder.SourceBuilderFactory;
 import cn.yogjun.docking.source.manager.resource.Resource;
 import lombok.Data;
 
@@ -43,7 +44,7 @@ public class ProcessorCompositionSource extends SourceSpec implements Iterable<S
     List<Object> maps = (List<Object>) map.get("sources");
     processorCompositionSource.setSources(
         maps.stream()
-            .map(obj -> (SourceBean) new SourceBean().build((Map<String, Object>) obj))
+            .map(obj -> (SourceBean) SourceBuilderFactory.getSourceHandleBuilder(SourceTypeAlias.PUBLIC).build((Map<String, Object>) obj))
             .collect(Collectors.toList()));
     return processorCompositionSource;
   }

@@ -19,7 +19,7 @@ public class SourceBuildTest {
   public void build1() throws FileNotFoundException {
     FileReader fileReader =
         new FileReader(
-            "/Users/miaojun/code/java/yog-docking/test/src/test/resources/demo-api-rest.json");
+            "/Users/miaojun/code/java/yog-docking/test/src/test/resources/demo-api-rest2.json");
     SourceBean sourceBean = new JsonSourceReader().read(fileReader);
     System.out.println(sourceBean);
   }

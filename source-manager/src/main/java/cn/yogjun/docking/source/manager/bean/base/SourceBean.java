@@ -41,7 +41,6 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
   public void checkSource() {
     // 校验类型和id不能为空
     // 规格参数不能为空
-    // 资源不包含
     if (!StrUtil.isAllNotBlank(this.getId(), this.getType())
         || null == spec
         || !SourceTypeAlias.sourceTypes.contains(type)) {
@@ -52,7 +51,8 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
 
   @Override
   protected SourceSpec buildSource(Map<String, Object> map) {
-    SourceBean sourceBean = new SourceBean();
+    SourceBean sourceBean =
+        (SourceBean) SourceBuilderFactory.getSourceHandleBuilder(SourceTypeAlias.PUBLIC);
     // id
     String id = (String) map.get("id");
     sourceBean.setId(id);

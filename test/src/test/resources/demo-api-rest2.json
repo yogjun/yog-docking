@@ -1,51 +1,54 @@
 {
   "id": "hnp-docking-api-php-hellowword",
   "version": 1,
-  "type": "api-restful",
+  "type": "api-rest",
   "metadata": {
     "remark": "不提供配置组合功能，具体函数api的组合也表现为一个java函数",
     "name": "hellowoword.php"
   },
-  "spec(api-restful)": {
+  "spec": {
     "method": "GET",
-    "uri": "www.abc.com/mn",
-    "dataType": "json/xml",
-    "request": {
-      "handler": "api-restful-hnp-docking-xxx-request"
-    },
-    "response": {
-      "handler": "api-restful-hnp-docking-xxx-response"
-    }
-  },
-  "spec(api-restful2)": {
-    "method": "GET",
-    "uri": "www.abc.com/mn",
+    "url": "www.abc.com/mn",
     "dataType": "json/xml",
     "request": {
       "name": {
-        "id": "",
-        "type": "reference",
+        "type": "processor-reference",
         "spec": {
           "id": "",
-          "type": "property",
-          "subType": "string",
+          "type": "property-string",
+          "spec": {
+            "value": "matthew"
+          }
+        }
+      },
+      "name2": {
+        "id": "",
+        "type": "property-string",
+        "spec": {
           "value": "matthew"
         }
       },
       "age": {
-        "type": "reference",
+        "id": "",
+        "type": "processor-reference",
         "spec": {
-          "id": "api-restful-hnp-docking-xxx-request"
+          "id": "api-restful-hnp-docking-xxx-request",
+          "type": "",
+          "spec": {}
         }
       },
-      "sex": {
-      },
-      "reference": {
-        "id": "api-restful-hnp-docking-xxx-request"
+      "this": {
+        "type": "processor-reference",
+        "id": "api-restful-hnp-docking-xxx-request",
+        "type": "",
+        "spec": {}
       }
     },
     "response": {
-      "handler": "api-restful-hnp-docking-xxx-response"
+      "this": {
+        "type": "processor-reference",
+        "id": "api-restful-hnp-docking-xxx-response"
+      }
     }
   }
 }

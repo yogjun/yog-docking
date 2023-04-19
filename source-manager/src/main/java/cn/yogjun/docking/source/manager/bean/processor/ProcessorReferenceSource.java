@@ -4,6 +4,7 @@ import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
+import cn.yogjun.docking.source.manager.builder.SourceBuilderFactory;
 import cn.yogjun.docking.source.manager.resource.Resource;
 import lombok.Data;
 
@@ -30,6 +31,6 @@ public class ProcessorReferenceSource extends SourceSpec {
 
   @Override
   protected SourceSpec buildSource(Map<String, Object> map) {
-    return new SourceBean().build(map);
+    return SourceBuilderFactory.getSourceHandleBuilder(SourceTypeAlias.PUBLIC).build(map);
   }
 }
