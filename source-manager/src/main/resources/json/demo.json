@@ -26,6 +26,10 @@
   "spec(processor-composition)": [
     {
       "id": "hnp-docking-api-php-hellowwordchild",
+      "version": 1
+    },
+    {
+      "id": "",
       "type": "api-restful",
       "version": 1
     }

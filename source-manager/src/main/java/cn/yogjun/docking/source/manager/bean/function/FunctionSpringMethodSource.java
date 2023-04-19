@@ -5,6 +5,8 @@ import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * {@link FunctionSpringMethodSource}
  *
@@ -23,5 +25,13 @@ public class FunctionSpringMethodSource extends SourceSpec {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
+  }
+
+  @Override
+  public SourceSpec buildSource(Map<String, Object> map) {
+    FunctionSpringMethodSource functionSpringMethodSource = new FunctionSpringMethodSource();
+    functionSpringMethodSource.setBeanId((String) map.get("beanId"));
+    functionSpringMethodSource.setMethodName((String) map.get("methodName"));
+    return functionSpringMethodSource;
   }
 }

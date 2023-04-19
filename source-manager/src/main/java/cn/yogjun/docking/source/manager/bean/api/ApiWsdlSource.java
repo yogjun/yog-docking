@@ -5,6 +5,8 @@ import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * {@link ApiWsdlSource}
  *
@@ -32,5 +34,14 @@ public class ApiWsdlSource extends SourceSpec {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
+  }
+
+  @Override
+  public SourceSpec buildSource(Map<String, Object> map) {
+    ApiWsdlSource apiWsdlSource = new ApiWsdlSource();
+    apiWsdlSource.setServiceClass((String) map.get("serviceClass"));
+    apiWsdlSource.setUrl((String) map.get("url"));
+    apiWsdlSource.setMethodName((String) map.get("methodName"));
+    return apiWsdlSource;
   }
 }

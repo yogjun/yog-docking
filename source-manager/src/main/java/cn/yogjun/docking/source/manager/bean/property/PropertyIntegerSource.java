@@ -4,6 +4,8 @@ import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * {@link PropertyIntegerSource}
  *
@@ -20,5 +22,12 @@ public class PropertyIntegerSource extends SourceSpec {
       throw new ErrorSourceException(
           ErrorSourceException.Code.SOURCE_FORMAT_ERROR, this.toString());
     }
+  }
+
+  @Override
+  public SourceSpec buildSource(Map<String, Object> map) {
+    PropertyIntegerSource propertyIntegerSource = new PropertyIntegerSource();
+    propertyIntegerSource.setValue((Integer) map.get("value"));
+    return propertyIntegerSource;
   }
 }
