@@ -36,7 +36,7 @@ public class ApiRestSource extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     ApiRestSource apiRestSource = new ApiRestSource();
     apiRestSource.setMethod((String) map.get("method"));
     apiRestSource.setUrl((String) map.get("url"));

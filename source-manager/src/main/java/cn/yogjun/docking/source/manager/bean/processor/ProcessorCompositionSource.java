@@ -38,7 +38,7 @@ public class ProcessorCompositionSource extends SourceSpec implements Iterable<S
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     ProcessorCompositionSource processorCompositionSource = new ProcessorCompositionSource();
     List<Object> maps = (List<Object>) map.get("sources");
     processorCompositionSource.setSources(

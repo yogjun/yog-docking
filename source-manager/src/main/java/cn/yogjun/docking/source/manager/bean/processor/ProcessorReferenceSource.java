@@ -29,7 +29,7 @@ public class ProcessorReferenceSource extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     return new SourceBean().buildSource(map);
   }
 }

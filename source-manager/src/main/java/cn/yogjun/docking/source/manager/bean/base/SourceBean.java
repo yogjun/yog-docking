@@ -81,7 +81,6 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
     // spec
     Map<String, Object> spec = (Map<String, Object>) map.get("spec");
     sourceBean.setSpec(SourceBuilderFactory.getSourceHandleBuilder(type).buildSource(spec));
-    sourceBean.checkSource();
     return sourceBean;
   }
 }

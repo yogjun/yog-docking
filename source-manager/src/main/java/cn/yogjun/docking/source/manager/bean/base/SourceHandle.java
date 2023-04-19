@@ -13,5 +13,5 @@ public interface SourceHandle {
   /** 检查资源 */
   void checkSource();
 
-  SourceSpec buildSource(Map<String, Object> map);
+  SourceSpec build(Map<String, Object> map);
 }

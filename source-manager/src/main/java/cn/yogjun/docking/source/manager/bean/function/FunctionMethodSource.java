@@ -31,7 +31,7 @@ public class FunctionMethodSource extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     FunctionMethodSource functionMethodSource = new FunctionMethodSource();
     functionMethodSource.setClassName((String) map.get("className"));
     functionMethodSource.setMethodName((String) map.get("methodName"));

@@ -40,7 +40,7 @@ public class ApiWsdlSource extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     ApiWsdlSource apiWsdlSource = new ApiWsdlSource();
     apiWsdlSource.setServiceClass((String) map.get("serviceClass"));
     apiWsdlSource.setUrl((String) map.get("url"));

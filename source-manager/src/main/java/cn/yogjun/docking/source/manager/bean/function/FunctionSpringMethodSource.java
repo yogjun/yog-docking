@@ -31,7 +31,7 @@ public class FunctionSpringMethodSource extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     FunctionSpringMethodSource functionSpringMethodSource = new FunctionSpringMethodSource();
     functionSpringMethodSource.setBeanId((String) map.get("beanId"));
     functionSpringMethodSource.setMethodName((String) map.get("methodName"));

@@ -28,7 +28,7 @@ public class PropertyStringSource extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     PropertyStringSource propertyStringSource = new PropertyStringSource();
     propertyStringSource.setValue((String) map.get("value"));
     return propertyStringSource;
