@@ -21,6 +21,6 @@ public abstract class AbstractSourceBeanReader implements SourceReader {
   protected abstract Map<String, Object> loadSource(Reader reader) throws Exception;
 
   protected SourceBean createSource(Map<String, Object> map) {
-    return (SourceBean) new SourceBean().buildSource(map);
+    return (SourceBean) new SourceBean().build(map);
   }
 }

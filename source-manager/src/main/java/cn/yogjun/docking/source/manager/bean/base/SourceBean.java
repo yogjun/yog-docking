@@ -51,7 +51,7 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
   }
 
   @Override
-  public SourceSpec buildSource(Map<String, Object> map) {
+  protected SourceSpec buildSource(Map<String, Object> map) {
     SourceBean sourceBean = new SourceBean();
     // id
     String id = (String) map.get("id");
@@ -80,7 +80,7 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
     }
     // spec
     Map<String, Object> spec = (Map<String, Object>) map.get("spec");
-    sourceBean.setSpec(SourceBuilderFactory.getSourceHandleBuilder(type).buildSource(spec));
+    sourceBean.setSpec(SourceBuilderFactory.getSourceHandleBuilder(type).build(spec));
     return sourceBean;
   }
 }

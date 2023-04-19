@@ -43,7 +43,7 @@ public class ProcessorCompositionSource extends SourceSpec implements Iterable<S
     List<Object> maps = (List<Object>) map.get("sources");
     processorCompositionSource.setSources(
         maps.stream()
-            .map(obj -> (SourceBean) new SourceBean().buildSource((Map<String, Object>) obj))
+            .map(obj -> (SourceBean) new SourceBean().build((Map<String, Object>) obj))
             .collect(Collectors.toList()));
     return processorCompositionSource;
   }

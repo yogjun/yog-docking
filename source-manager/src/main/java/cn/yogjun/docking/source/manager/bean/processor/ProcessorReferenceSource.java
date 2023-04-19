@@ -30,6 +30,6 @@ public class ProcessorReferenceSource extends SourceSpec {
 
   @Override
   protected SourceSpec buildSource(Map<String, Object> map) {
-    return new SourceBean().buildSource(map);
+    return new SourceBean().build(map);
   }
 }
