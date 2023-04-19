@@ -1,0 +1,54 @@
+{
+  "id": "hnp-docking-api-php-hellowword",
+  "version": 1,
+  "type": "api-rest",
+  "metadata": {
+    "remark": "不提供配置组合功能，具体函数api的组合也表现为一个java函数",
+    "name": "hellowoword.php"
+  },
+  "spec": {
+    "method": "GET",
+    "url": "www.baidu.com",
+    "dataType": "json/xml",
+    "request": {
+      "name": {
+        "type": "processor-nested",
+        "spec": {
+          "id": "",
+          "type": "property-string",
+          "spec": {
+            "value": "matthew"
+          }
+        }
+      },
+      "name2": {
+        "id": "",
+        "type": "property-string",
+        "spec": {
+          "value": "matthew"
+        }
+      },
+      "age": {
+        "id": "",
+        "type": "processor-reference",
+        "spec": {
+          "id": "api-restful-hnp-docking-xxx-request"
+        }
+      },
+      "this": {
+        "type": "processor-reference",
+        "spec": {
+          "id": "api-restful-hnp-docking-xxx-request"
+        }
+      }
+    },
+    "response": {
+      "this": {
+        "type": "processor-reference",
+        "spec": {
+          "id": "api-restful-hnp-docking-xxx-response"
+        }
+      }
+    }
+  }
+}
