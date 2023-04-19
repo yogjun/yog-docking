@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @version ${project.version} - 2023/4/14
  */
 @Slf4j
-@Component(value = SourceTypeAlias.PROPERTY_STRING)
+@Component(value = SourceTypeAlias.PROPERTY_INTEGER)
 public class PropertyStringExecutor extends AbstractExecutor<PropertyIntegerSource> {
 
   @Override

@@ -22,6 +22,7 @@ public class ErrorSourceException extends RuntimeException {
   @AllArgsConstructor
   public enum Code {
     SOURCE_FORMAT_ERROR(500, "资源格式错误"),
+    NOT_FOUND(404, "资源未找到"),
     ;
 
     private Integer code;
