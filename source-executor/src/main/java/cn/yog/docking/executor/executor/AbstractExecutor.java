@@ -18,11 +18,11 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
   protected abstract void sourceExecute(SourceBean<T> source, Params params);
 
   public void execute(SourceBean source, Params params) {
-    // todo  before execute
+    // todo  request execute
     //    source.getRequestHandlers().entrySet().forEach();
     // 资源实际执行
     this.sourceExecute(source, params);
-    // todo  after execute
+    // todo  response execute
     //    source.getResponseHandlers().entrySet().forEach();
   }
 }
