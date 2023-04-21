@@ -1,7 +1,7 @@
 package cn.yogjun.docking.invoke.handler.feign.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import cn.yogjun.docking.source.manager.resource.Resource;
+import cn.yogjun.docking.source.manager.core.Resource;
 
 /**
  * {@link IFeignClient}

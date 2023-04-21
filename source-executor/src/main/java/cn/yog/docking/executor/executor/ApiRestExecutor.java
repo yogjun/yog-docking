@@ -10,7 +10,7 @@ import cn.yogjun.docking.bean.exceptions.ApiRestErrorException;
 import cn.yogjun.docking.invoke.handler.rest.RestKit;
 import cn.yogjun.docking.source.manager.bean.api.ApiRestSource;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
-import cn.yogjun.docking.source.manager.resource.Resource;
+import cn.yogjun.docking.source.manager.core.Resource;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.HashMap;

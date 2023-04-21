@@ -3,7 +3,7 @@ package cn.yogjun.docking.source.manager.bean.property;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
-import cn.yogjun.docking.source.manager.resource.Resource;
+import cn.yogjun.docking.source.manager.core.Resource;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

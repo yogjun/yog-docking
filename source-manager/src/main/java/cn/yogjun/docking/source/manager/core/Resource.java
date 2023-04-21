@@ -1,4 +1,4 @@
-package cn.yogjun.docking.source.manager.resource;
+package cn.yogjun.docking.source.manager.core;
 
 import java.lang.annotation.*;
 

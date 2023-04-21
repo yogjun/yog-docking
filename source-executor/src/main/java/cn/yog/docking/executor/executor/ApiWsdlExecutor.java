@@ -8,7 +8,7 @@ import cn.yogjun.docking.invoke.handler.wsdl.WebServiceUtil;
 import cn.yogjun.docking.source.manager.bean.api.ApiWsdlSource;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import lombok.extern.slf4j.Slf4j;
-import cn.yogjun.docking.source.manager.resource.Resource;
+import cn.yogjun.docking.source.manager.core.Resource;
 
 /**
  * {@link ApiWsdlExecutor}

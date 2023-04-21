@@ -7,7 +7,7 @@ import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.processor.ProcessorNestedSource;
-import cn.yogjun.docking.source.manager.resource.Resource;
+import cn.yogjun.docking.source.manager.core.Resource;
 
 /**
  * {@link ProcessorNestedExecutor}

@@ -2,7 +2,7 @@ package cn.yogjun.docking.source.manager.bean.base;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
-import cn.yogjun.docking.source.manager.resource.SourceBuilderFactory;
+import cn.yogjun.docking.source.manager.core.SourceBuilderFactory;
 import lombok.Data;
 
 import java.util.LinkedHashMap;
