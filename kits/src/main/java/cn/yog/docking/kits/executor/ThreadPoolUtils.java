@@ -1,4 +1,4 @@
-package executor; /*
+package cn.yog.docking.kits.executor; /*
                    * Licensed to the Apache Software Foundation (ASF) under one or more
                    * contributor license agreements.  See the NOTICE file distributed with
                    * this work for additional information regarding copyright ownership.
@@ -41,7 +41,7 @@ public class ThreadPoolUtils {
    * 固定大小线程池，无队列
    *
    * @param corePoolSize 初始化线程池
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newFixedThreadPool(int corePoolSize) {
     return new ThreadPoolExecutor(
@@ -53,7 +53,7 @@ public class ThreadPoolUtils {
    *
    * @param corePoolSize 初始化线程池
    * @param queue 线程池队列
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newFixedThreadPool(
       int corePoolSize, BlockingQueue<Runnable> queue) {
@@ -66,7 +66,7 @@ public class ThreadPoolUtils {
    * @param corePoolSize 初始化线程池
    * @param queue 线程池队列
    * @param threadFactory 线程池工厂
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newFixedThreadPool(
       int corePoolSize, BlockingQueue<Runnable> queue, ThreadFactory threadFactory) {
@@ -81,7 +81,7 @@ public class ThreadPoolUtils {
    * @param queue 线程池队列
    * @param threadFactory 线程池工厂
    * @param handler 拒绝策略
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newFixedThreadPool(
       int corePoolSize,
@@ -97,7 +97,7 @@ public class ThreadPoolUtils {
    *
    * @param corePoolSize 初始化线程池
    * @param maximumPoolSize 最大线程池
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newCachedThreadPool(int corePoolSize, int maximumPoolSize) {
     return new ThreadPoolExecutor(
@@ -114,7 +114,7 @@ public class ThreadPoolUtils {
    * @param corePoolSize 初始化线程池
    * @param maximumPoolSize 最大线程池
    * @param queue 线程池队列
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newCachedThreadPool(
       int corePoolSize, int maximumPoolSize, BlockingQueue<Runnable> queue) {
@@ -129,7 +129,7 @@ public class ThreadPoolUtils {
    * @param maximumPoolSize 最大线程池
    * @param queue 线程池队列
    * @param threadFactory 线程池工厂
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newCachedThreadPool(
       int corePoolSize,
@@ -153,7 +153,7 @@ public class ThreadPoolUtils {
    * @param queue 线程池队列
    * @param threadFactory 线程池工厂
    * @param handler 拒绝策略
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newCachedThreadPool(
       int corePoolSize,
@@ -180,7 +180,7 @@ public class ThreadPoolUtils {
    * @param queue 线程池队列
    * @param threadFactory 线程池工厂
    * @param handler 拒绝策略
-   * @return the thread pool executor
+   * @return the thread pool cn.yog.docking.kits.executor
    */
   public static ThreadPoolExecutor newCachedThreadPool(
       int corePoolSize,

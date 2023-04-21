@@ -34,15 +34,15 @@ public class SourceExecutorFactory {
       String resourceType = executor.type();
       if (executorMap.containsKey(resourceType)) {
         throw new RuntimeException(
-            "[init executor map] error: executor duplicate; type=" + resourceType);
+            "[init cn.yog.docking.kits.executor map] error: cn.yog.docking.kits.executor duplicate; type=" + resourceType);
       }
       if (!SourceExecutor.class.isAssignableFrom(clazz)) {
-        throw new RuntimeException("[init executor map] error: class error");
+        throw new RuntimeException("[init cn.yog.docking.kits.executor map] error: class error");
       }
       try {
         executorMap.put(resourceType, (SourceExecutor) clazz.newInstance());
       } catch (InstantiationException | IllegalAccessException e) {
-        throw new RuntimeException("[init executor map] error: instance error", e);
+        throw new RuntimeException("[init cn.yog.docking.kits.executor map] error: instance error", e);
       }
     }
     return executorMap;

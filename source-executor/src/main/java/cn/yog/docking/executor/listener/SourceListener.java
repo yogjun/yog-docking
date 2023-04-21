@@ -14,4 +14,8 @@ public interface SourceListener {
   void beforeExecute(SourceBean source, Params param);
 
   void afterExecute(SourceBean source, Params param);
+
+  void onSuccess(SourceBean source, Params param);
+
+  void onFailure(SourceBean source, Params param, Exception e);
 }

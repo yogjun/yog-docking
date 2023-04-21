@@ -1,4 +1,4 @@
-package executor;
+package cn.yog.docking.kits.executor;
 
 import cn.yog.docking.executor.executor.abstracts.SourceExecutor;
 import cn.yog.docking.executor.core.SourceExecutorFactory;
