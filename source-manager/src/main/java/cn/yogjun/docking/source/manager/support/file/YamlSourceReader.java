@@ -1,5 +1,6 @@
-package cn.yogjun.docking.source.manager.support;
+package cn.yogjun.docking.source.manager.support.file;
 
+import cn.yogjun.docking.source.manager.support.AbstractSourceBeanReader;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.Reader;
@@ -11,7 +12,7 @@ import java.util.Map;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/13
  */
-public class YamlSourceReader extends AbstractSourceBeanReader {
+public class YamlSourceReader extends AbstractSourceBeanReader<Reader> {
 
   private Yaml yaml;
 

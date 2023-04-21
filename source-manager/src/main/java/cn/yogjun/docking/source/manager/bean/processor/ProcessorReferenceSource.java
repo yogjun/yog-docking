@@ -4,8 +4,8 @@ import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
-import cn.yogjun.docking.source.manager.bean.property.PropertyStringSource;
 import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yogjun.docking.source.manager.support.db.MongoSourceReader;
 import lombok.Data;
 
 import java.util.Map;
@@ -33,14 +33,7 @@ public class ProcessorReferenceSource extends SourceSpec {
   protected SourceSpec buildSource(Map<String, Object> map) {
     // id
     String id = (String) map.get("id");
-
-    // todo 根据id获取资源
-    SourceBean sourceBean = new SourceBean(); // 根据id获取的source
-    // mock 数据
-    sourceBean.setId(id);
-    sourceBean.setType("property-string");
-    sourceBean.setSpec(new PropertyStringSource("1"));
-
+    SourceBean sourceBean = new MongoSourceReader().read(id);
     // 获取后check
     sourceBean.checkSource();
     return sourceBean;

@@ -1,5 +1,6 @@
-package cn.yogjun.docking.source.manager.support;
+package cn.yogjun.docking.source.manager.support.file;
 
+import cn.yogjun.docking.source.manager.support.AbstractSourceBeanReader;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,7 +15,7 @@ import java.util.Map;
  * @version ${project.version} - 2023/4/13
  */
 @Slf4j
-public class JsonSourceReader extends AbstractSourceBeanReader {
+public class JsonSourceReader extends AbstractSourceBeanReader<Reader> {
 
   private ObjectMapper objectMapper;
 
