@@ -6,7 +6,7 @@ import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.invoke.handler.method.MethodUtil;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.function.FunctionMethodSource;
-import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yog.docking.executor.core.Executor;
 
 /**
  * {@link FunctionMethodExecutor}
@@ -14,7 +14,7 @@ import cn.yogjun.docking.source.manager.core.Resource;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Resource(type = SourceTypeAlias.METHOD_FUNCTION)
+@Executor(type = SourceTypeAlias.METHOD_FUNCTION)
 public class FunctionMethodExecutor extends AbstractExecutor<FunctionMethodSource> {
 
   @Override

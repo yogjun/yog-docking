@@ -7,7 +7,7 @@ import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.processor.ProcessorNestedSource;
-import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yog.docking.executor.core.Executor;
 
 /**
  * {@link ProcessorNestedExecutor}
@@ -15,7 +15,7 @@ import cn.yogjun.docking.source.manager.core.Resource;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Resource(type = SourceTypeAlias.PROCESSOR_NESTED)
+@Executor(type = SourceTypeAlias.PROCESSOR_NESTED)
 public class ProcessorNestedExecutor extends AbstractExecutor<ProcessorNestedSource> {
   @Override
   protected void sourceExecute(SourceBean<ProcessorNestedSource> source, Params params) {

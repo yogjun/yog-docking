@@ -8,7 +8,7 @@ import cn.yogjun.docking.invoke.handler.wsdl.WebServiceUtil;
 import cn.yogjun.docking.source.manager.bean.api.ApiWsdlSource;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import lombok.extern.slf4j.Slf4j;
-import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yog.docking.executor.core.Executor;
 
 /**
  * {@link ApiWsdlExecutor}
@@ -17,7 +17,7 @@ import cn.yogjun.docking.source.manager.core.Resource;
  * @version ${project.version} - 2023/4/14
  */
 @Slf4j
-@Resource(type = SourceTypeAlias.WSDL)
+@Executor(type = SourceTypeAlias.WSDL)
 public class ApiWsdlExecutor extends AbstractExecutor<ApiWsdlSource> {
 
   @Override

@@ -2,7 +2,7 @@ package cn.yogjun.docking.invoke.handler.feign.client;
 
 import org.springframework.cloud.openfeign.FeignClientBuilder;
 import org.springframework.context.ApplicationContext;
-import cn.yogjun.docking.source.manager.core.Resource;
+import org.springframework.stereotype.Component;
 
 /**
  * {@link IFeignClientFactory}

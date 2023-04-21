@@ -3,6 +3,7 @@ package cn.yog.docking.executor.executor;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.ContentType;
 import cn.hutool.http.HttpResponse;
+import cn.yog.docking.executor.core.Executor;
 import cn.yog.docking.executor.executor.abstracts.AbstractExecutor;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
@@ -10,7 +11,6 @@ import cn.yogjun.docking.bean.exceptions.ApiRestErrorException;
 import cn.yogjun.docking.invoke.handler.rest.RestKit;
 import cn.yogjun.docking.source.manager.bean.api.ApiRestSource;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
-import cn.yogjun.docking.source.manager.core.Resource;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.HashMap;
@@ -22,7 +22,7 @@ import java.util.Map;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Resource(type = SourceTypeAlias.REST)
+@Executor(type = SourceTypeAlias.REST)
 public class ApiRestExecutor extends AbstractExecutor<ApiRestSource> {
 
   @Override

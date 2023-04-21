@@ -7,7 +7,7 @@ import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.processor.ProcessorCompositionSource;
-import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yog.docking.executor.core.Executor;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Resource(type = SourceTypeAlias.PROCESSOR_COMPOSITION)
+@Executor(type = SourceTypeAlias.PROCESSOR_COMPOSITION)
 public class ProcessorCompositionExecutor extends AbstractExecutor<ProcessorCompositionSource> {
 
   @Override

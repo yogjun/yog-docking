@@ -5,7 +5,7 @@ import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.property.PropertyIntegerSource;
-import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yog.docking.executor.core.Executor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version ${project.version} - 2023/4/14
  */
 @Slf4j
-@Resource(type = SourceTypeAlias.PROPERTY_INTEGER)
+@Executor(type = SourceTypeAlias.PROPERTY_INTEGER)
 public class PropertyIntegerExecutor extends AbstractExecutor<PropertyIntegerSource> {
 
   @Override
