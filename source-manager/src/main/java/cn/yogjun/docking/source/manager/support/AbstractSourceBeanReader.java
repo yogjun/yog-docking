@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public abstract class AbstractSourceBeanReader implements SourceReader {
 
+  // todo read from db（by id）
   public RootSourceBean read(Reader reader) {
     Map<String, Object> sources = loadSource(reader);
     return createSource(sources);

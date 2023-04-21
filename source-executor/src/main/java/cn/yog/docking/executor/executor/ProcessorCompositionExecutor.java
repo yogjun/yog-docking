@@ -1,13 +1,13 @@
-package cn.yog.docking.executor.executor.impl;
+package cn.yog.docking.executor.executor;
 
-import cn.yog.docking.executor.executor.AbstractExecutor;
-import cn.yog.docking.executor.executor.SourceExecutor;
-import cn.yog.docking.executor.executor.SourceExecutorFactory;
+import cn.yog.docking.executor.core.SourceExecutorFactory;
+import cn.yog.docking.executor.executor.abstracts.AbstractExecutor;
+import cn.yog.docking.executor.executor.abstracts.SourceExecutor;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.processor.ProcessorCompositionSource;
-import org.springframework.stereotype.Component;
+import cn.yogjun.docking.source.manager.resource.Resource;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * @author <a href="mailto:matthew.miao@yunlsp.com">matthew.miao</a>
  * @version ${project.version} - 2023/4/14
  */
-@Component(value = SourceTypeAlias.PROCESSOR_COMPOSITION)
+@Resource(type = SourceTypeAlias.PROCESSOR_COMPOSITION)
 public class ProcessorCompositionExecutor extends AbstractExecutor<ProcessorCompositionSource> {
 
   @Override

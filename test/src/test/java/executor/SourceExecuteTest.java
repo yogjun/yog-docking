@@ -1,10 +1,9 @@
 package executor;
 
-import cn.yog.docking.executor.executor.SourceExecutor;
-import cn.yog.docking.executor.executor.SourceExecutorFactory;
+import cn.yog.docking.executor.executor.abstracts.SourceExecutor;
+import cn.yog.docking.executor.core.SourceExecutorFactory;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.source.manager.bean.base.RootSourceBean;
-import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.support.JsonSourceReader;
 import org.junit.Test;
 

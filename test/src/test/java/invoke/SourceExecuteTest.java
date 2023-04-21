@@ -1,9 +1,8 @@
 package invoke;
 
-import cn.yog.docking.executor.executor.SourceExecutor;
-import cn.yog.docking.executor.executor.SourceExecutorFactory;
+import cn.yog.docking.executor.executor.abstracts.SourceExecutor;
+import cn.yog.docking.executor.core.SourceExecutorFactory;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
-import org.junit.Test;
 
 /**
  * {@link SourceExecuteTest}

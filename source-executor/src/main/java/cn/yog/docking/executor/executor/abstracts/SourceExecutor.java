@@ -1,4 +1,4 @@
-package cn.yog.docking.executor.executor;
+package cn.yog.docking.executor.executor.abstracts;
 
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
@@ -16,5 +16,5 @@ public interface SourceExecutor<T extends SourceSpec> {
 
   //  List<SourceExecutor> getNextExecutors();
 
-  // to opt 添加 处理资源执行监听器 listeners
+  // todo opt 添加 处理资源执行监听器 listeners
 }

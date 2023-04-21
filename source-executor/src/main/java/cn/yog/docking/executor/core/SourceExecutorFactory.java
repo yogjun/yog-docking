@@ -1,6 +1,7 @@
-package cn.yog.docking.executor.executor;
+package cn.yog.docking.executor.core;
 
 import cn.hutool.extra.spring.SpringUtil;
+import cn.yog.docking.executor.executor.abstracts.SourceExecutor;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 
 /**
@@ -17,12 +18,4 @@ public class SourceExecutorFactory {
     SourceExecutor se = SpringUtil.getBean(sourceBean.getType());
     return se;
   }
-
-  //  public static SourceExecutor getExecutor(SourceType sourceType) {
-  //    return getExecutor(sourceType.getHandlerName());
-  //  }
-  //
-  //  public static SourceExecutor getExecutor(String type) {
-  //    return SpringUtil.getBean(type);
-  //  }
 }

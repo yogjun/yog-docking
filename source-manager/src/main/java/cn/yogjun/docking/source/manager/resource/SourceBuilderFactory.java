@@ -1,9 +1,8 @@
-package cn.yogjun.docking.source.manager.builder;
+package cn.yogjun.docking.source.manager.resource;
 
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceHandle;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
-import cn.yogjun.docking.source.manager.resource.ResourceManager;
 
 /**
  * {@link SourceBuilderFactory}

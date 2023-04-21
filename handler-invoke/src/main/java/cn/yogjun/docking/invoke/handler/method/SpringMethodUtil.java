@@ -1,7 +1,7 @@
 package cn.yogjun.docking.invoke.handler.method;
 
 import cn.hutool.extra.spring.SpringUtil;
-import org.springframework.stereotype.Component;
+import cn.yogjun.docking.source.manager.resource.Resource;
 
 @Component
 public class SpringMethodUtil {

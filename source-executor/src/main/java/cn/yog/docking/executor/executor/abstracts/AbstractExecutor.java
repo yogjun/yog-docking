@@ -1,4 +1,4 @@
-package cn.yog.docking.executor.executor;
+package cn.yog.docking.executor.executor.abstracts;
 
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
