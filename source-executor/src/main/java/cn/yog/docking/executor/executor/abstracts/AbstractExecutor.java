@@ -1,5 +1,6 @@
 package cn.yog.docking.executor.executor.abstracts;
 
+import cn.yog.docking.executor.core.SourceExecutorFactory;
 import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceSpec;
@@ -18,12 +19,21 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
   protected abstract void sourceExecute(SourceBean<T> source, Params params);
 
   public void execute(SourceBean source, Params params) {
-    // todo  request execute
-    //        source.getRequestHandlers().entrySet().forEach();
+    source
+        .getRequestHandlers()
+        .forEach(
+            (parameter, s) -> {
+              SourceExecutor se = SourceExecutorFactory.getExecutor(s);
+              se.execute(s, params);
+            });
     // 资源实际执行
     this.sourceExecute(source, params);
-    // todo  response execute
-    //    source.getResponseHandlers().entrySet().forEach();
+    source
+        .getResponseHandlers()
+        .forEach(
+            (parameter, s) -> {
+              SourceExecutor se = SourceExecutorFactory.getExecutor(s);
+              se.execute(s, params);
+            });
   }
-
 }
