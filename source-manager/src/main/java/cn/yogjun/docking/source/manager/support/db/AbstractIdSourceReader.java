@@ -20,7 +20,7 @@ public abstract class AbstractIdSourceReader extends AbstractSourceBeanReader<St
 
   public SourceBean read(String id) {
     if (cacheSource.containsKey(id)) {
-      return cacheSource.get(cacheSource);
+      return cacheSource.get(id);
     }
     Map<String, Object> sources = loadSource(id);
     SourceBean sb = createSource(sources);
