@@ -1,5 +1,6 @@
 package cn.yogjun.docking.source.manager.bean.processor;
 
+import cn.hutool.core.lang.Pair;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
@@ -33,7 +34,8 @@ public class ProcessorReferenceSource extends SourceSpec {
   protected SourceSpec buildSource(Map<String, Object> map) {
     // id
     String id = (String) map.get("id");
-    SourceBean sourceBean = new MongoSourceReader().read(id);
+    Integer version = (Integer) map.get("version");
+    SourceBean sourceBean = new MongoSourceReader().read(Pair.of(id, version));
     // 获取后check
     sourceBean.checkSource();
     return sourceBean;
