@@ -22,6 +22,12 @@ public class Params implements Iterable<Entry<String, Object>> {
   /** 处理结果 */
   private Object response;
 
+  public static Params ofMap(Map<String, Object> map) {
+    Params p = new Params();
+    p.params = map;
+    return p;
+  }
+
   public void put(String name, Object param) {
     Objects.requireNonNull(name);
     this.params.put(name, param);

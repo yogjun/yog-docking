@@ -3,8 +3,8 @@ package cn.yogjun.docking.source.manager.bean.base;
 import cn.hutool.core.util.StrUtil;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.bean.exceptions.ErrorSourceException;
-import cn.yogjun.docking.source.manager.core.SourceBuilderFactory;
 import cn.yogjun.docking.source.manager.core.Resource;
+import cn.yogjun.docking.source.manager.core.SourceBuilderFactory;
 import lombok.Data;
 
 import java.util.Map;
@@ -34,6 +34,9 @@ public class SourceBean<T extends SourceSpec> extends SourceSpec {
 
   /** 当出现多个的时候表示顺序 */
   private int order;
+
+  /** 有值时会作为key将参数存入全局变量中，后面的资源将可以直接使用 */
+  private String key;
 
   private T spec;
 
