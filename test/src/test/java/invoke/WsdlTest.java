@@ -1,10 +1,8 @@
 package invoke;
 
 import cn.yogjun.docking.invoke.handler.wsdl.WebServiceUtil;
-import com.docking.wsdl.xlt.CreateOrderRequest;
-import com.docking.wsdl.xlt.CreateOrderResponse;
-import com.docking.wsdl.xlt.DeclareItem;
-import com.docking.wsdl.xlt.OrderOnlineService;
+import com.docking.wsdl.xlt.*;
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
 /**
@@ -16,7 +14,15 @@ import org.junit.Test;
 public class WsdlTest {
 
   private static final String URL = "http://47.92.33.48:8086/xms/services/order";
-  //  private static final String URL = "http://www.360chain.com:8086/xms/services/order";
+
+  @Test
+  public void testQuery() {
+    OrderOnlineService service = WebServiceUtil.getWebServiceByUrl(OrderOnlineService.class, URL);
+    LookupOrderRequest request = new LookupOrderRequest();
+    request.setOrderId("1140920243");
+    LookupOrderResponse res = service.lookupOrder("1958538970ce46b79081437d8d3d35b4", request);
+    System.out.println(res);
+  }
 
   @Test
   public void testWsdl() {
@@ -27,8 +33,8 @@ public class WsdlTest {
 
       CreateOrderRequest req = new CreateOrderRequest();
       req.setTrackingNo("HP000000001SG"); // 服务商跟踪号码
-      req.setOrderNo("HP000000001SG"); // 客户单号
-      req.setTransportWayCode("XJPPOSTGH"); // 运输方式代码（渠道代码）。必填
+      req.setOrderNo("HGJKJ00001"); // 客户单号
+      req.setTransportWayCode("LT110"); // 运输方式代码（渠道代码）。必填
       req.setCargoCode("W"); // 货物类型(W包裹/D文件)。必填
       req.setInsured("Y"); // 购买保险（投保：Y，不投保：N）。 必填
       req.setWeight(0.368); // 货物预报重量。必填；0<=value
@@ -36,7 +42,7 @@ public class WsdlTest {
       req.setGoodsDescription("Gift"); // 物品类别内容
       req.setPieces(1l);
       // 收货人
-      req.setDestinationCountryCode("NL"); // 目的国家二字简码。必填
+      req.setDestinationCountryCode("US"); // 目的国家二字简码。必填
       req.setConsigneeCompanyName("XXX Company "); // 收件人公司名称。length<=100
       req.setConsigneeName("Wuyun"); // 收件人姓名。 length<=100
       req.setConsigneeTelephone("333333"); // 收件人电话号码。length<=32
@@ -67,8 +73,9 @@ public class WsdlTest {
       declareItem2.setNetWeight(0.123);
       declareItem2.setUnitPrice(5.6);
       declareItem2.setPieces(2l);
+      req.setDeclareItems(Lists.newArrayList(declareItem1));
 
-      CreateOrderResponse res = service.createOrder("0958538970ce46b79081437d8d3d35b4", req);
+      CreateOrderResponse res = service.createOrder("1958538970ce46b79081437d8d3d35b4", req);
       System.out.println(res);
 
     } catch (Exception se) {

@@ -556,6 +556,14 @@ public class CreateOrderRequest {
         return this.declareItems;
     }
 
+    public void setDeclareItems(List<DeclareItem> declareItems) {
+        this.declareItems = declareItems;
+    }
+
+    public void setPackageItems(List<PackageItems> packageItems) {
+        this.packageItems = packageItems;
+    }
+
     /**
      * 获取destinationCountryCode属性的值。
      * 

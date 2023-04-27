@@ -1,5 +1,6 @@
 package cn.yog.docking.executor.executor;
 
+import cn.yog.docking.executor.core.Executor;
 import cn.yog.docking.executor.core.SourceExecutorFactory;
 import cn.yog.docking.executor.executor.abstracts.AbstractExecutor;
 import cn.yog.docking.executor.executor.abstracts.SourceExecutor;
@@ -7,7 +8,6 @@ import cn.yog.docking.executor.param.Params;
 import cn.yogjun.docking.bean.constants.SourceTypeAlias;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 import cn.yogjun.docking.source.manager.bean.processor.ProcessorCompositionSource;
-import cn.yog.docking.executor.core.Executor;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +28,6 @@ public class ProcessorCompositionExecutor extends AbstractExecutor<ProcessorComp
         compositionSource.getSources().stream()
             .map(
                 sb -> {
-                  // todo 嵌套调用，参数和返回值全局管理
                   SourceExecutor se = SourceExecutorFactory.getExecutor(sb);
                   se.execute(sb, params);
                   return params.getResponse();
