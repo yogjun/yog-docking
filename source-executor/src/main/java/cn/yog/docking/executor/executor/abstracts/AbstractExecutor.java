@@ -35,7 +35,7 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
   }
 
   private void doRequestParams(SourceBean source, Params params) {
-    for (Map.Entry<String, SourceBean> entry : source.getResponseHandlers().entrySet()) {
+    for (Map.Entry<String, SourceBean> entry : source.getSpec().getResponseHandlers().entrySet()) {
       String parameter = entry.getKey();
       SourceBean s = entry.getValue();
       SourceExecutor se = SourceExecutorFactory.getExecutor(s);
@@ -50,7 +50,7 @@ public abstract class AbstractExecutor<T extends SourceSpec> implements SourceEx
 
   private void doResponseParams(SourceBean source, Params params) {
     Params responseParam = Params.ofMap(BeanUtil.beanToMap(params.getResponse()));
-    for (Map.Entry<String, SourceBean> entry : source.getRequestHandlers().entrySet()) {
+    for (Map.Entry<String, SourceBean> entry : source.getSpec().getRequestHandlers().entrySet()) {
       String parameter = entry.getKey();
       SourceBean s = entry.getValue();
       SourceExecutor se = SourceExecutorFactory.getExecutor(s);

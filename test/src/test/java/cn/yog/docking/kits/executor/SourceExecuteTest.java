@@ -29,7 +29,7 @@ public class SourceExecuteTest {
     Params p = new Params();
 
     SourceExecutor se = SourceExecutorFactory.getExecutor(sourceBean);
-    se.execute(sourceBean,p );
+    se.execute(sourceBean,p);
     System.out.println(p);
   }
 }

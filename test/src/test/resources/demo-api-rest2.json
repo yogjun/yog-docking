@@ -9,7 +9,6 @@
   "spec": {
     "method": "GET",
     "url": "www.abc.com/mn",
-    "dataType": "json/xml",
     "request": {
       "name": {
         "type": "processor-nested",
@@ -26,19 +25,6 @@
         "type": "property-string",
         "spec": {
           "value": "matthew"
-        }
-      },
-      "age": {
-        "id": "",
-        "type": "processor-reference",
-        "spec": {
-          "id": "api-restful-hnp-docking-xxx-request"
-        }
-      },
-      "this": {
-        "type": "processor-reference",
-        "spec": {
-          "id": "api-restful-hnp-docking-xxx-request"
         }
       }
     },
