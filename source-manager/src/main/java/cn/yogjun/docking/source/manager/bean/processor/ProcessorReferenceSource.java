@@ -38,6 +38,9 @@ public class ProcessorReferenceSource extends SourceSpec {
     SourceBean sourceBean = new MongoSourceReader().read(Pair.of(id, version));
     // 获取后check
     sourceBean.checkSource();
-    return sourceBean;
+    ProcessorReferenceSource processorReferenceSource = new ProcessorReferenceSource();
+    processorReferenceSource.setSource(sourceBean);
+    processorReferenceSource.checkSource();
+    return processorReferenceSource;
   }
 }

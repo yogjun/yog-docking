@@ -1,6 +1,5 @@
 package cn.yogjun.docking.source.manager.support;
 
-import cn.yogjun.docking.source.manager.bean.base.RootSourceBean;
 import cn.yogjun.docking.source.manager.bean.base.SourceBean;
 
 import java.util.Map;
@@ -21,6 +20,6 @@ public abstract class AbstractSourceBeanReader<T> implements SourceReader<T> {
   protected abstract Map<String, Object> loadSource(T source);
 
   protected SourceBean createSource(Map<String, Object> map) {
-    return (SourceBean) new RootSourceBean().build(map);
+    return (SourceBean) new SourceBean<>().build(map);
   }
 }
